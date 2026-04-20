@@ -33,16 +33,12 @@ const siteData = {
       "His research has received multiple recognitions, and he has co-authored work reviewed by leading venues such as CVPR and ECCV. He has also been invited to serve as a reviewer for CVPR. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\">Prof. Mu Yao</a>, where he works on applying online reinforcement learning to post-training for vision-language-action (VLA) models.",
     ],
     notice:
-      "Feel free to contact me.",
+      "Feel free to contact me～",
   },
   news: [
     {
       date: "2026/04",
       text: "Updated my academic homepage and released a new project page.",
-    },
-    {
-      date: "2026/03",
-      text: "Presented our work at <strong>ECCV 2025 Conference</strong>.",
     },
     {
       date: "2026/02",
@@ -51,10 +47,6 @@ const siteData = {
     {
       date: "2025/12",
       text: "Started a new research internship on multimodal embodied AI.",
-    },
-    {
-      date: "2025/09",
-      text: "Presented our work at <strong>CVPR 2026 Conference</strong>.",
     },
   ],
   publications: [
