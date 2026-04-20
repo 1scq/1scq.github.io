@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Vision Research Thumbnail</title>
+  <desc id="desc">Abstract illustration for a computer vision project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="165" cy="150" r="96" fill="#f8fafc" fill-opacity=".12"/>
+  <circle cx="165" cy="150" r="52" fill="#93c5fd"/>
+  <circle cx="165" cy="150" r="24" fill="#0f172a"/>
+  <rect x="290" y="92" width="250" height="18" rx="9" fill="#bfdbfe"/>
+  <rect x="290" y="128" width="180" height="14" rx="7" fill="#dbeafe" fill-opacity=".9"/>
+  <rect x="290" y="166" width="310" height="10" rx="5" fill="#dbeafe" fill-opacity=".7"/>
+  <rect x="290" y="192" width="260" height="10" rx="5" fill="#dbeafe" fill-opacity=".55"/>
+  <rect x="78" y="292" width="564" height="112" rx="24" fill="#eff6ff" fill-opacity=".12" stroke="#bfdbfe" stroke-opacity=".35"/>
+  <path d="M120 368c48-80 96-120 144-120 46 0 82 34 110 74 24 35 44 54 72 54 34 0 68-31 102-78" fill="none" stroke="#93c5fd" stroke-width="16" stroke-linecap="round"/>
+  <text x="78" y="64" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="26" font-weight="600">Computer Vision Project</text>
+</svg>
