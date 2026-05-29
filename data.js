@@ -28,12 +28,12 @@ const siteData = {
   about: {
     title: "About Me",
     paragraphs: [
-      "Chengqi Shi is an undergraduate student in computer science at <a href=\"#\">Xi'an Jiaotong University</a>. His research interests span <strong>AIGC</strong>, <strong>multimodal large models</strong>, and <strong>embodied intelligence</strong>.",
-      "Before joining the School of Computer Science at Xi'an Jiaotong University, he worked as a research assistant at the Institute of Artificial Intelligence and Robotics, Xi'an Jiaotong University, where he studied test-time fine-tuning of flow matching models with online reinforcement learning. He graduated from the Young Gifted Class of the Qian Xuesen Honors Program at Xi'an Jiaotong University with honors.",
-      "His research has received multiple recognitions, and he has co-authored work reviewed by leading venues such as CVPR and ECCV. He has also been invited to serve as a reviewer for CVPR. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao<strong></a>, where he works on applying online reinforcement learning to post-training for vision-language-action (VLA) models.",
+      "Chengqi Shi is an undergraduate student in Computer Science at <a href=\"#\">Xi'an Jiaotong University</a>. His research interests lie in artificial intelligence-generated content (AIGC), multimodal large models, and embodied intelligence.",
+      "Prior to joining the School of Computer Science at Xi'an Jiaotong University, he served as a research assistant at the Institute of Artificial Intelligence and Robotics, Xi'an Jiaotong University, where he investigated test-time fine-tuning of flow matching models through online reinforcement learning. He graduated with honors from the Young Gifted Class of the Qian Xuesen Honors Program at Xi'an Jiaotong University.",
+      "His research has received multiple recognitions, and he has co-authored works reviewed by leading computer vision venues, including CVPR and ECCV. He has also been invited to serve as a reviewer for CVPR. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao</strong></a>, where his current research focuses on humanoid loco-manipulation and reinforcement learning for vision-language-action (VLA) models."
     ],
     notice:
-      "Feel free to contact me～",
+      "I am currently seeking Fall 2029 Ph.D. opportunities. If my research interests align with yours, please feel free to contact me."
   },
   news: [
     {
@@ -51,23 +51,18 @@ const siteData = {
   ],
   publications: [
     {
-      title: "Project Title Goes Here",
+      title: "Test Time Fine-Tuning for Flow Matching Model via Online-RL",
       pageUrl: "#",
-      image: "./images/pub-vision.svg",
-      imageAlt: "Project Title Goes Here thumbnail",
-      venue: "Conference / Journal 2026",
-      authors: "Your Name, Collaborator A, Collaborator B, Advisor Name",
+      image: "./images/pipeline8.png",
+      imageAlt: "Online RL for Test-Time Fine-Tuning pipeline",
+      venue: "Under Review, 2025.11",
+      authors: [
+        { name: "Weiyi Hong" },
+        { name: "Chengqi Shi", highlight: true },
+        { name: "Longjun Liu", corresponding: true },
+      ],
       summary:
-        "A one-sentence summary of the problem, the method, and the main contribution.",
-      paperUrl: "#",
-      projectUrl: "#",
-      codeUrl: "#",
-      bibtex: `@inproceedings{your2026paper,
-  title={Project Title Goes Here},
-  author={Your Name and Collaborator A and Collaborator B},
-  booktitle={Conference Name},
-  year={2026}
-}`,
+        "Online reinforcement learning for test-time fine-tuning of flow matching models.",
     },
     {
       title: "Another Representative Research Project",
