@@ -281,6 +281,90 @@ a:hover {
   font-size: 0.85rem;
 }
 
+.experience-list {
+  display: grid;
+  gap: 24px;
+}
+
+.experience-item {
+  position: relative;
+  display: block;
+  min-height: 148px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.experience-item:hover,
+.experience-item:focus-visible {
+  border-color: rgba(190, 18, 60, 0.34);
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  outline: none;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.experience-copy {
+  position: relative;
+  z-index: 1;
+  max-width: min(620px, 68%);
+}
+
+.experience-item h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.experience-item h3 i {
+  color: var(--soft);
+  font-size: 0.72em;
+  transform: translateY(-1px);
+  transition: color 0.2s ease;
+}
+
+.experience-item:hover h3 i,
+.experience-item:focus-visible h3 i {
+  color: var(--accent);
+}
+
+.experience-item p {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.experience-item time {
+  display: block;
+  color: var(--soft);
+  font-size: 1.03rem;
+  line-height: 1.45;
+}
+
+.experience-logo {
+  position: absolute;
+  top: 50%;
+  right: -34px;
+  width: min(44%, 360px);
+  height: auto;
+  opacity: 0.08;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
 .publication {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -546,6 +630,30 @@ body.lightbox-active {
     gap: 12px;
   }
 
+  .experience-item {
+    min-height: 156px;
+    padding: 24px;
+  }
+
+  .experience-copy {
+    max-width: 82%;
+  }
+
+  .experience-item h3 {
+    font-size: 1.16rem;
+  }
+
+  .experience-item p,
+  .experience-item time {
+    font-size: 0.95rem;
+  }
+
+  .experience-logo {
+    right: -54px;
+    width: 62%;
+    opacity: 0.07;
+  }
+
   .content {
     padding: 40px 18px;
   }
@@ -563,7 +671,9 @@ body.lightbox-active {
 @media (prefers-reduced-motion: reduce) {
   .image-lightbox,
   .lightbox-panel,
-  .pub-image-wrapper {
+  .pub-image-wrapper,
+  .experience-item,
+  .experience-item h3 i {
     transition: none;
   }
 }

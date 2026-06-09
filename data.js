@@ -49,6 +49,32 @@ const siteData = {
       text: "Started a new research internship on multimodal embodied AI.",
     },
   ],
+  experience: [
+    {
+      institution: "Shanghai Jiao Tong University",
+      role: "ScaleLab Research Intern",
+      period: "February 2026 - Present",
+      logo: "./asserts/sjtu.png",
+      logoAlt: "Shanghai Jiao Tong University logo",
+      url: "https://scalelab-sjtu.github.io/index.html",
+    },
+    {
+      institution: "Xi'an Jiaotong University",
+      role: "School of Computer Science and Technology",
+      period: "September 2025 - Present",
+      logo: "./asserts/xjtu.png",
+      logoAlt: "Xi'an Jiaotong University logo",
+      url: "http://www.cs.xjtu.edu.cn/",
+    },
+    {
+      institution: "Xi'an Jiaotong University",
+      role: "Young Gifted Class",
+      period: "September 2023 - July 2025",
+      logo: "./asserts/xjtu.png",
+      logoAlt: "Xi'an Jiaotong University logo",
+      url: "https://bjb.xjtu.edu.cn/info/1071/1237.htm",
+    },
+  ],
   publications: [
     {
       title: "Test Time Fine-Tuning for Flow Matching Model via Online-RL",

@@ -70,6 +70,37 @@ const renderNews = (items) =>
     )
     .join("");
 
+const renderExperience = (items) =>
+  items
+    .map(
+      (item) => `
+        <a
+          class="experience-item"
+          href="${escapeHtml(item.url || "#")}"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="${escapeHtml(`${item.institution}, ${item.role}`)}"
+        >
+          ${
+            item.logo
+              ? `<img class="experience-logo" src="${escapeHtml(item.logo)}" alt="${escapeHtml(
+                  item.logoAlt || item.institution
+                )}" />`
+              : ""
+          }
+          <div class="experience-copy">
+            <h3>
+              <span>${escapeHtml(item.institution)}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </h3>
+            <p>${escapeHtml(item.role)}</p>
+            <time>${escapeHtml(item.period)}</time>
+          </div>
+        </a>
+      `
+    )
+    .join("");
+
 const buildPublicationLinks = (item) =>
   [
     item.paperUrl
@@ -190,6 +221,7 @@ const renderSidebar = () => {
       <nav class="section-nav" aria-label="Section navigation">
         <a href="#about">About</a>
         <a href="#news">News</a>
+        <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#honors">Honors</a>
       </nav>
@@ -200,7 +232,7 @@ const renderSidebar = () => {
 
 const renderContent = () => {
   const content = document.querySelector("#content");
-  const { about, news, publications, honors } = siteData;
+  const { about, news, experience, publications, honors } = siteData;
   content.innerHTML = `
     <section class="intro-grid">
       <section id="about" class="section-block">
@@ -214,6 +246,10 @@ const renderContent = () => {
           <div class="news-table">${renderNews(news)}</div>
         </div>
       </section>
+    </section>
+    <section id="experience" class="section-block experience-block">
+      <h2>Experience</h2>
+      <div class="experience-list">${renderExperience(experience)}</div>
     </section>
     <section id="publications" class="section-block publications-block">
       <h2>Selected Publications <span>(* equal contribution)</span></h2>
