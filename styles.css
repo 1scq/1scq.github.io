@@ -366,9 +366,7 @@ a:hover {
 }
 
 .publication {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 28px;
+  display: block;
   padding: 0 0 48px;
   margin-bottom: 48px;
   border-bottom: 1px dashed var(--line);
@@ -378,35 +376,6 @@ a:hover {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-
-.pub-media {
-  width: 100%;
-}
-
-.pub-image-wrapper {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: #fff;
-  cursor: zoom-in;
-}
-
-.pub-image-wrapper:hover,
-.pub-image-wrapper:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.pub-image {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .pub-body h3 {
@@ -492,76 +461,6 @@ a:hover {
   display: block;
 }
 
-body.lightbox-active {
-  overflow: hidden;
-}
-
-.image-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.22s ease;
-}
-
-.image-lightbox.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  background: rgba(15, 23, 42, 0.78);
-  cursor: zoom-out;
-}
-
-.lightbox-panel {
-  position: relative;
-  width: min(1180px, 94vw);
-  max-height: 88vh;
-  transform: scale(0.96);
-  transition: transform 0.22s ease;
-}
-
-.image-lightbox.open .lightbox-panel {
-  transform: scale(1);
-}
-
-.lightbox-image {
-  display: block;
-  width: 100%;
-  max-height: 88vh;
-  object-fit: contain;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--text);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-}
-
-.lightbox-close:hover,
-.lightbox-close:focus-visible {
-  color: var(--accent);
-}
-
 .honors-list {
   margin: 0;
   padding-left: 20px;
@@ -616,8 +515,6 @@ body.lightbox-active {
   }
 
   .publication {
-    grid-template-columns: 200px minmax(0, 1fr);
-    gap: 24px;
     padding-bottom: 36px;
     margin-bottom: 36px;
   }
@@ -658,20 +555,9 @@ body.lightbox-active {
     padding: 40px 18px;
   }
 
-  .image-lightbox {
-    padding: 16px;
-  }
-
-  .lightbox-close {
-    top: 8px;
-    right: 8px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .image-lightbox,
-  .lightbox-panel,
-  .pub-image-wrapper,
   .experience-item,
   .experience-item h3 i {
     transition: none;

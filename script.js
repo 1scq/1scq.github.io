@@ -167,16 +167,6 @@ const renderPublications = (items) =>
     .map(
       (item, index) => `
         <article class="publication">
-          <div class="pub-media">
-            <button
-              class="pub-image-wrapper"
-              type="button"
-              data-full-image="${escapeHtml(item.image)}"
-              data-image-alt="${escapeHtml(item.imageAlt)}"
-            >
-              <img class="pub-image" src="${item.image}" alt="${escapeHtml(item.imageAlt)}" />
-            </button>
-          </div>
           <div class="pub-body">
             <h3><a href="${item.pageUrl || "#"}">${escapeHtml(item.title)}</a></h3>
             <p class="pub-venue"><span class="venue-badge">${escapeHtml(item.venue)}</span></p>
@@ -259,15 +249,6 @@ const renderContent = () => {
       <h2>Honors & Awards</h2>
       <ul class="honors-list">${renderHonors(honors)}</ul>
     </section>
-    <div class="image-lightbox" id="image-lightbox" aria-hidden="true" hidden>
-      <button class="lightbox-backdrop" type="button" aria-label="Close enlarged image"></button>
-      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Enlarged publication image">
-        <button class="lightbox-close" type="button" aria-label="Close enlarged image">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-        <img class="lightbox-image" src="" alt="" />
-      </div>
-    </div>
   `;
 };
 
@@ -284,46 +265,6 @@ const bindBibtexToggle = () => {
       bib.classList.toggle("open");
       label.textContent = bib.classList.contains("open") ? "Hide BibTeX" : "BibTeX";
     });
-  });
-};
-
-const bindImageLightbox = () => {
-  const lightbox = document.querySelector("#image-lightbox");
-  const image = lightbox?.querySelector(".lightbox-image");
-  const closeButtons = lightbox?.querySelectorAll(".lightbox-backdrop, .lightbox-close");
-
-  if (!lightbox || !image || !closeButtons) {
-    return;
-  }
-
-  const closeLightbox = () => {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("lightbox-active");
-    window.setTimeout(() => {
-      if (!lightbox.classList.contains("open")) {
-        lightbox.hidden = true;
-        image.removeAttribute("src");
-      }
-    }, 220);
-  };
-
-  document.querySelectorAll(".pub-image-wrapper").forEach((button) => {
-    button.addEventListener("click", () => {
-      image.src = button.dataset.fullImage;
-      image.alt = button.dataset.imageAlt || "";
-      lightbox.hidden = false;
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("lightbox-active");
-      window.requestAnimationFrame(() => lightbox.classList.add("open"));
-    });
-  });
-
-  closeButtons.forEach((button) => button.addEventListener("click", closeLightbox));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("open")) {
-      closeLightbox();
-    }
   });
 };
 
@@ -359,7 +300,6 @@ const init = () => {
   renderContent();
   document.querySelector("#current-year").textContent = new Date().getFullYear();
   bindBibtexToggle();
-  bindImageLightbox();
   bindActiveNav();
 };
 
