@@ -30,12 +30,23 @@ const siteData = {
     paragraphs: [
       "Chengqi Shi is an undergraduate student in Computer Science at <a href=\"#\">Xi'an Jiaotong University</a>. His research interests lie in artificial intelligence-generated content (AIGC), multimodal large models, and embodied intelligence.",
       "Prior to joining the School of Computer Science at Xi'an Jiaotong University, he served as a research assistant at the Institute of Artificial Intelligence and Robotics, Xi'an Jiaotong University, where he investigated test-time fine-tuning of flow matching models through online reinforcement learning. He graduated with honors from the Young Gifted Class of the Qian Xuesen Honors Program at Xi'an Jiaotong University.",
-      "He has been fortunate to work on projects related to computer vision and embodied intelligence. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao</strong></a>, where his current research focuses on humanoid loco-manipulation and reinforcement learning for vision-language-action (VLA) models."
+      "He has been fortunate to work on projects related to computer vision and embodied intelligence. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao</strong></a>, where his current research focuses on humanoid loco-manipulation, world model representation learning, and reinforcement learning."
     ],
     notice:
       "I am currently seeking Fall 2029 Ph.D. opportunities. If my research interests align with yours, please feel free to contact me."
   },
+  researchInterests: [
+    "Humanoid Robotics",
+    "World Models",
+    "Video Generation Models",
+    "Reinforcement Learning",
+    "Representation Learning",
+  ],
   news: [
+    {
+      date: "2026/07",
+      text: "Started a research internship at Shanghai Jiao Tong University.",
+    },
     {
       date: "2026/04",
       text: "Updated my academic homepage and released a new project page.",

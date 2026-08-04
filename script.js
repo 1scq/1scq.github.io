@@ -210,6 +210,7 @@ const renderSidebar = () => {
       </div>
       <nav class="section-nav" aria-label="Section navigation">
         <a href="#about">About</a>
+        <a href="#research-interests">Research Interests</a>
         <a href="#news">News</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
@@ -222,7 +223,7 @@ const renderSidebar = () => {
 
 const renderContent = () => {
   const content = document.querySelector("#content");
-  const { about, news, experience, publications, honors } = siteData;
+  const { about, researchInterests, news, experience, publications, honors } = siteData;
   content.innerHTML = `
     <section class="intro-grid">
       <section id="about" class="section-block">
@@ -236,6 +237,12 @@ const renderContent = () => {
           <div class="news-table">${renderNews(news)}</div>
         </div>
       </section>
+    </section>
+    <section id="research-interests" class="section-block research-interests-block">
+      <h2>Research Interests</h2>
+      <ul class="research-interests-list">
+        ${researchInterests.map((interest) => `<li>${escapeHtml(interest)}</li>`).join("")}
+      </ul>
     </section>
     <section id="experience" class="section-block experience-block">
       <h2>Experience</h2>
