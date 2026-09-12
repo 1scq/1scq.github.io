@@ -62,6 +62,14 @@ const siteData = {
   ],
   experience: [
     {
+      institution: "LimX Dynamics",
+      role: "Embodied Intelligence Algorithm Intern",
+      period: "August 2026 - Present",
+      logo: "./asserts/limx-dynamics.png",
+      logoAlt: "LimX Dynamics logo",
+      url: "https://www.limxdynamics.com/",
+    },
+    {
       institution: "Shanghai Jiao Tong University",
       role: "ScaleLab Research Intern",
       period: "February 2026 - Present",
