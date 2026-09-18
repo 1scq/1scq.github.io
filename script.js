@@ -166,7 +166,16 @@ const renderPublications = (items) =>
   items
     .map(
       (item, index) => `
-        <article class="publication">
+        <article class="publication${item.image ? " publication-with-image" : ""}">
+          ${
+            item.image
+              ? `<div class="pub-media">
+                  <button class="pub-image-wrapper" type="button" aria-haspopup="dialog" aria-label="${escapeHtml(`View full-size image: ${item.title}`)}">
+                    <img class="pub-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" />
+                  </button>
+                </div>`
+              : ""
+          }
           <div class="pub-body">
             <h3><a href="${item.pageUrl || "#"}">${escapeHtml(item.title)}</a></h3>
             <p class="pub-venue"><span class="venue-badge">${escapeHtml(item.venue)}</span></p>
@@ -256,7 +265,102 @@ const renderContent = () => {
       <h2>Honors & Awards</h2>
       <ul class="honors-list">${renderHonors(honors)}</ul>
     </section>
+    <dialog class="image-lightbox" aria-label="Enlarged publication image">
+      <div class="lightbox-backdrop" aria-hidden="true"></div>
+      <img class="lightbox-image" alt="" />
+      <button class="lightbox-close" type="button" aria-label="Close enlarged image" autofocus>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </dialog>
   `;
+};
+
+const bindImageLightbox = () => {
+  const dialog = document.querySelector(".image-lightbox");
+  const image = dialog.querySelector(".lightbox-image");
+  const backdrop = dialog.querySelector(".lightbox-backdrop");
+  const closeButton = dialog.querySelector(".lightbox-close");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let trigger;
+  let imageAnimation;
+  let backdropAnimation;
+  let closing = false;
+
+  const thumbnailTransform = () => {
+    const thumbnail = trigger.querySelector("img").getBoundingClientRect();
+    // Measure the final image bounds independently of its current animation.
+    const width = image.offsetWidth;
+    const height = image.offsetHeight;
+    const left = image.offsetLeft;
+    const top = image.offsetTop;
+    return `translate(${thumbnail.left - left}px, ${thumbnail.top - top}px) scale(${thumbnail.width / width}, ${thumbnail.height / height})`;
+  };
+
+  const close = async () => {
+    if (!dialog.open || closing) return;
+    closing = true;
+    const currentTransform = getComputedStyle(image).transform;
+    const currentOpacity = getComputedStyle(backdrop).opacity;
+    imageAnimation?.cancel();
+    backdropAnimation?.cancel();
+    const options = {
+      duration: reducedMotion.matches ? 0 : 320,
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      fill: "both",
+    };
+    imageAnimation = image.animate(
+      [{ transform: currentTransform }, { transform: thumbnailTransform() }],
+      options
+    );
+    backdropAnimation = backdrop.animate(
+      [{ opacity: currentOpacity }, { opacity: 0 }],
+      options
+    );
+    closeButton.style.opacity = "0";
+    await imageAnimation.finished;
+    dialog.close();
+    document.documentElement.classList.remove("lightbox-active");
+    imageAnimation.cancel();
+    backdropAnimation.cancel();
+    trigger.focus({ preventScroll: true });
+    closing = false;
+  };
+
+  document.querySelectorAll(".pub-image-wrapper").forEach((button) => {
+    button.addEventListener("click", async () => {
+      if (dialog.open) return;
+      const thumbnail = button.querySelector("img");
+      image.src = thumbnail.currentSrc || thumbnail.src;
+      image.alt = thumbnail.alt;
+      try {
+        await image.decode();
+      } catch {
+        return;
+      }
+      if (dialog.open) return;
+      trigger = button;
+      document.documentElement.classList.add("lightbox-active");
+      closeButton.style.opacity = "1";
+      dialog.showModal();
+      const options = {
+        duration: reducedMotion.matches ? 0 : 440,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        fill: "both",
+      };
+      imageAnimation = image.animate(
+        [{ transform: thumbnailTransform() }, { transform: "none" }],
+        options
+      );
+      backdropAnimation = backdrop.animate([{ opacity: 0 }, { opacity: 1 }], options);
+    });
+  });
+
+  closeButton.addEventListener("click", close);
+  backdrop.addEventListener("click", close);
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    close();
+  });
 };
 
 const bindBibtexToggle = () => {
@@ -307,6 +411,7 @@ const init = () => {
   renderContent();
   document.querySelector("#current-year").textContent = new Date().getFullYear();
   bindBibtexToggle();
+  bindImageLightbox();
   bindActiveNav();
 };
 
