@@ -28,9 +28,9 @@ const siteData = {
   about: {
     title: "About Me",
     paragraphs: [
-      "Chengqi Shi is an undergraduate student in Computer Science at <a href=\"#\">Xi'an Jiaotong University</a>. His research interests lie in artificial intelligence-generated content (AIGC), multimodal large models, and embodied intelligence.",
-      "Prior to joining the School of Computer Science at Xi'an Jiaotong University, he served as a research assistant at the Institute of Artificial Intelligence and Robotics, Xi'an Jiaotong University, where he investigated test-time fine-tuning of flow matching models through online reinforcement learning. He graduated with honors from the Young Gifted Class of the Qian Xuesen Honors Program at Xi'an Jiaotong University.",
-      "He has been fortunate to work on projects related to computer vision and embodied intelligence. He is currently a research assistant at the School of Computer Science, Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao</strong></a>, where his current research focuses on humanoid loco-manipulation, world model representation learning, and reinforcement learning."
+      "I'm an undergraduate student in Computer Science and Technology at Xi'an Jiaotong University (XJTU). My research focuses on <strong>embodied intelligence and humanoid robotics</strong>, with particular interests in Vision-Language-Action (VLA) models, reinforcement learning, and world models.",
+      "Currently, I conduct research at Shanghai Jiao Tong University, advised by <a href=\"https://yaomarkmu.github.io/\" target=\"_blank\" rel=\"noreferrer\"><strong>Prof. Mu Yao</strong></a>, on humanoid whole-body mobile manipulation and world models. My work on the Unitree G1 connects vision-language policies with motion generation and whole-body control, from simulation to real-world deployment. Previously, I explored reinforcement learning and adaptation for generative models at XJTU's Institute of Artificial Intelligence and Robotics (IAIR).",
+      "My long-term goal is to build <strong>general-purpose embodied agents</strong> that perceive and reason about the physical world, translate understanding into coordinated actions, and continually improve through interaction. I'm especially interested in how VLA models, world models, and reinforcement learning can work together toward this goal, and I welcome conversations and collaborations with researchers and engineers who share these interests."
     ],
     notice:
       "I am currently seeking Fall 2029 Ph.D. opportunities. If my research interests align with yours, please feel free to contact me."
@@ -44,20 +44,20 @@ const siteData = {
   ],
   news: [
     {
+      date: "2026/09",
+      text: "Our <a href=\"https://arxiv.org/abs/2609.17210\" target=\"_blank\" rel=\"noreferrer\">FluxVLA Engine</a> technical report is out!",
+    },
+    {
+      date: "2026/08",
+      text: "Our team won National First Prize in the RoboCup Special Competition.",
+    },
+    {
       date: "2026/07",
       text: "Started a research internship at Shanghai Jiao Tong University.",
     },
     {
       date: "2026/04",
       text: "Updated my academic homepage and released a new project page.",
-    },
-    {
-      date: "2026/02",
-      text: "One paper is under revision.",
-    },
-    {
-      date: "2025/12",
-      text: "Started a new research internship on multimodal embodied AI.",
     },
   ],
   workExperience: [
@@ -142,6 +142,7 @@ const siteData = {
   url={https://arxiv.org/abs/2609.17210}
 }`,
     },
+    /* Temporarily hidden publication placeholders.
     {
       title: "Test Time Fine-Tuning for Flow Matching Model via Online-RL",
       pageUrl: "#",
@@ -181,10 +182,29 @@ const siteData = {
       slidesUrl: "#",
       codeUrl: "#",
     },
+    */
   ],
   honors: [
-    "RoboCup Vision Challenge, Team Captain (3D Object Recognition), February 2026",
-    "China Undergraduate Physics Experiment Competition, National First Prize, November 2025",
-    "Lanqiao Cup National Software Competition, Third Prize (C/C++ Group), April 2025",
+    {
+      date: "2026/08",
+      competition: "RoboCup Special Competition — 3D Object Recognition",
+      award: "National First Prize",
+      role: "Team Captain",
+    },
+    {
+      date: "2026/05",
+      competition: "Mathematical Contest in Modeling (MCM)",
+      award: "Honorable Mention",
+    },
+    {
+      date: "2025/11",
+      competition: "China Undergraduate Physics Experiment Competition (CUPET)",
+      award: "National First Prize",
+    },
+    {
+      date: "2025/05",
+      competition: "Lanqiao Cup",
+      award: "Provincial Third Prize",
+    },
   ],
 };

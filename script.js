@@ -198,7 +198,19 @@ const renderPublications = (items) =>
     .join("");
 
 const renderHonors = (items) =>
-  items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  items
+    .map(
+      (item) => `
+        <li class="honor-item">
+          <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
+          <div>
+            <h3>${escapeHtml(item.competition)}</h3>
+            <p><strong>${escapeHtml(item.award)}</strong>${item.role ? ` · ${escapeHtml(item.role)}` : ""}</p>
+          </div>
+        </li>
+      `
+    )
+    .join("");
 
 const renderSidebar = () => {
   const sidebar = document.querySelector("#sidebar");

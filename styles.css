@@ -586,11 +586,39 @@ a:hover {
 
 .honors-list {
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
 }
 
-.honors-list li + li {
-  margin-top: 8px;
+.honor-item {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.honor-item:last-child {
+  border-bottom: 0;
+}
+
+.honor-item time {
+  color: var(--soft);
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.honor-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.honor-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
 .copyright {
@@ -645,7 +673,8 @@ a:hover {
 
 @media (max-width: 640px) {
   .publication,
-  .news-row {
+  .news-row,
+  .honor-item {
     grid-template-columns: 1fr;
     gap: 12px;
   }
