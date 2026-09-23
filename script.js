@@ -221,7 +221,8 @@ const renderSidebar = () => {
         <a href="#about">About</a>
         <a href="#research-interests">Research Interests</a>
         <a href="#news">News</a>
-        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Work Experience</a>
         <a href="#publications">Publications</a>
         <a href="#honors">Honors</a>
       </nav>
@@ -232,7 +233,7 @@ const renderSidebar = () => {
 
 const renderContent = () => {
   const content = document.querySelector("#content");
-  const { about, researchInterests, news, experience, publications, honors } = siteData;
+  const { about, researchInterests, news, education, workExperience, publications, honors } = siteData;
   content.innerHTML = `
     <section class="intro-grid">
       <section id="about" class="section-block">
@@ -253,9 +254,13 @@ const renderContent = () => {
         ${researchInterests.map((interest) => `<li>${escapeHtml(interest)}</li>`).join("")}
       </ul>
     </section>
+    <section id="education" class="section-block experience-block">
+      <h2>Education</h2>
+      <div class="experience-list">${renderExperience(education)}</div>
+    </section>
     <section id="experience" class="section-block experience-block">
-      <h2>Experience</h2>
-      <div class="experience-list">${renderExperience(experience)}</div>
+      <h2>Work Experience</h2>
+      <div class="experience-list">${renderExperience(workExperience)}</div>
     </section>
     <section id="publications" class="section-block publications-block">
       <h2>Selected Publications <span>(* equal contribution)</span></h2>

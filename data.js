@@ -6,7 +6,7 @@ const siteData = {
     title: "Undergraduate Student",
     affiliation: "Xi'an Jiaotong University",
     email: "cqshi@stu.xjtu.edu.cn",
-    scholarUrl: "#",
+    scholarUrl: "https://scholar.google.com/citations?user=kj8WqooAAAAJ&hl=zh-CN",
     githubUrl: "https://github.com/lnscq",
     cvUrl: "./asserts/CV.pdf",
     contacts: [
@@ -60,7 +60,7 @@ const siteData = {
       text: "Started a new research internship on multimodal embodied AI.",
     },
   ],
-  experience: [
+  workExperience: [
     {
       institution: "LimX Dynamics",
       role: "Embodied Intelligence Algorithm Intern",
@@ -77,6 +77,8 @@ const siteData = {
       logoAlt: "Shanghai Jiao Tong University logo",
       url: "https://scalelab-sjtu.github.io/index.html",
     },
+  ],
+  education: [
     {
       institution: "Xi'an Jiaotong University",
       role: "School of Computer Science and Technology",
