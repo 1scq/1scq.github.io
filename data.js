@@ -132,6 +132,7 @@ const siteData = {
       summary:
         "An open, configuration-driven platform unifying embodied-policy training, simulation evaluation, human-in-the-loop correction, and real-robot deployment in a reproducible data-to-deployment workflow.",
       paperUrl: "https://arxiv.org/pdf/2609.17210",
+      projectUrl: "https://fluxvla.limxdynamics.com/",
       codeUrl: "https://github.com/FluxVLA/FluxVLA",
       bibtex: `@article{li2026fluxvla,
   title={{FluxVLA Engine}: A One-Stop {VLA} Engineering Platform for Embodied Intelligence},
