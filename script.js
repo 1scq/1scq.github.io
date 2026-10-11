@@ -228,6 +228,7 @@ const renderSidebar = () => {
       </ul>
       <div class="social-links" aria-label="Social links">
         ${renderSocialLinks(buildProfileSocialLinks(profile))}
+        <a href="${escapeHtml(profile.wechatQrImage)}" data-wechat-trigger aria-label="WeChat" title="WeChat" aria-haspopup="dialog" aria-controls="wechat-contact"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
       </div>
       <nav class="section-nav" aria-label="Section navigation">
         <a href="#about">About</a>
@@ -282,6 +283,14 @@ const renderContent = () => {
       <h2>Honors & Awards</h2>
       <ul class="honors-list">${renderHonors(honors)}</ul>
     </section>
+    <dialog id="wechat-contact" class="wechat-dialog" aria-labelledby="wechat-title" aria-describedby="wechat-description">
+      <div class="wechat-heading">
+        <h2 id="wechat-title">Connect on WeChat</h2>
+        <button class="wechat-close" type="button" aria-label="Close WeChat QR code" autofocus><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <p id="wechat-description">Scan the QR code to add me on WeChat.</p>
+      <img class="wechat-qr" src="${escapeHtml(siteData.profile.wechatQrImage)}" alt="Danny's WeChat contact QR code" />
+    </dialog>
     <dialog class="image-lightbox" aria-label="Enlarged publication image">
       <div class="lightbox-backdrop" aria-hidden="true"></div>
       <img class="lightbox-image" alt="" />
@@ -290,6 +299,32 @@ const renderContent = () => {
       </button>
     </dialog>
   `;
+};
+
+const bindWeChatDialog = () => {
+  const dialog = document.querySelector("#wechat-contact");
+  let trigger;
+  document.querySelectorAll("[data-wechat-trigger]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (dialog.open) return;
+      trigger = link;
+      dialog.showModal();
+      document.documentElement.classList.add("wechat-active");
+    });
+  });
+  dialog.querySelector(".wechat-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (
+      event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom
+    )) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.documentElement.classList.remove("wechat-active");
+    trigger?.focus({ preventScroll: true });
+  });
 };
 
 const bindImageLightbox = () => {
@@ -429,6 +464,7 @@ const init = () => {
   document.querySelector("#current-year").textContent = new Date().getFullYear();
   bindBibtexToggle();
   bindImageLightbox();
+  bindWeChatDialog();
   bindActiveNav();
 };
 

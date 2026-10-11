@@ -172,6 +172,68 @@ a:hover {
   text-decoration: none;
 }
 
+.wechat-active {
+  overflow: hidden;
+}
+
+.wechat-dialog {
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--text);
+  background: #fff;
+  overflow: auto;
+}
+
+.wechat-dialog::backdrop {
+  background: rgb(15 23 42 / 55%);
+}
+
+.wechat-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wechat-heading h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.wechat-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.wechat-close:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.wechat-dialog p {
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.wechat-qr {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .section-nav {
   display: flex;
   flex-direction: column;
