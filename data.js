@@ -100,6 +100,30 @@ const siteData = {
   ],
   publications: [
     {
+      title: "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+      pageUrl: "https://sp-hlm.github.io/",
+      image: "./assets/sp-hlm-system-overview.webp",
+      imageAlt: "SP-HLM deployment and training pipeline: sparse-pose prediction with SP-VLA, motion generation with SP-MGM, and whole-body tracking with SP-GMT",
+      venue: "Research Project",
+      authors: [
+        { name: "Zhaohui Yang*" },
+        { name: "Quanbao Lin*" },
+        { name: "Chengqi Shi*", highlight: true },
+        { name: "Zhenglang Weng" },
+        { name: "Jicheng Lin" },
+        { name: "Boyu Chen" },
+        { name: "Tengjie Zhu" },
+        { name: "Guanzhu Ren" },
+        { name: "Jiahao Xu" },
+        { name: "Yang Feng" },
+        { name: "Xiaokang Yang" },
+        { name: "Yao Mu", corresponding: true },
+      ],
+      summary:
+        "A sparse-pose-driven framework connecting vision-language-action prediction, real-time motion generation, and whole-body control for humanoid loco-manipulation. Five task-critical body poses and a learned motion prior enable coordinated behavior in simulation and on a real humanoid robot.",
+      projectUrl: "https://sp-hlm.github.io/",
+    },
+    {
       title: "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
       pageUrl: "https://arxiv.org/abs/2609.17210",
       image: "./assets/fluxvla-system-overview.png",
