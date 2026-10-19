@@ -102,8 +102,8 @@ const siteData = {
     {
       title: "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
       pageUrl: "https://sp-hlm.github.io/",
-      image: "./assets/sp-hlm-system-overview.webp",
-      imageAlt: "SP-HLM deployment and training pipeline: sparse-pose prediction with SP-VLA, motion generation with SP-MGM, and whole-body tracking with SP-GMT",
+      image: "./assets/sp-hlm-teaser.webp",
+      imageAlt: "SP-HLM teaser: sparse-pose interface comparison, simulated and real humanoid robot tasks, and experimental results",
       venue: "Research Project",
       authors: [
         { name: "Zhaohui Yang*" },
