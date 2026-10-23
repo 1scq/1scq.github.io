@@ -101,10 +101,10 @@ const siteData = {
   publications: [
     {
       title: "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
-      pageUrl: "https://sp-hlm.github.io/",
+      pageUrl: "https://arxiv.org/abs/2610.30044",
       image: "./assets/sp-hlm-teaser.webp",
       imageAlt: "SP-HLM teaser: sparse-pose interface comparison, simulated and real humanoid robot tasks, and experimental results",
-      venue: "Research Project",
+      venue: "arXiv preprint, Under Review, 2026.10",
       authors: [
         { name: "Zhaohui Yang*" },
         { name: "Quanbao Lin*" },
@@ -121,6 +121,7 @@ const siteData = {
       ],
       summary:
         "A sparse-pose-driven framework connecting vision-language-action prediction, real-time motion generation, and whole-body control for humanoid loco-manipulation. Five task-critical body poses and a learned motion prior enable coordinated behavior in simulation and on a real humanoid robot.",
+      paperUrl: "https://arxiv.org/pdf/2610.30044",
       projectUrl: "https://sp-hlm.github.io/",
     },
     {
