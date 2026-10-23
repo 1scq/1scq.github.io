@@ -202,11 +202,15 @@ const renderHonors = (items) =>
     .map(
       (item) => `
         <li class="honor-item">
-          <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
-          <div>
-            <h3>${escapeHtml(item.competition)}</h3>
-            <p><strong>${escapeHtml(item.award)}</strong>${item.role ? ` · ${escapeHtml(item.role)}` : ""}</p>
+          <span class="honor-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+          <div class="honor-copy">
+            <div class="honor-heading">
+              <h3>${escapeHtml(item.award)}</h3>
+              ${item.role ? `<span class="honor-role">${escapeHtml(item.role)}</span>` : ""}
+            </div>
+            <p>${escapeHtml(item.competition)}</p>
           </div>
+          <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
         </li>
       `
     )

@@ -648,15 +648,19 @@ a:hover {
 
 .honors-list {
   margin: 0;
-  padding: 0;
+  padding: 0 24px;
   list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(120deg, #f8fafc, #fff 65%);
 }
 
 .honor-item {
   display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: start;
   gap: 16px;
-  padding: 18px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -665,22 +669,52 @@ a:hover {
 }
 
 .honor-item time {
-  color: var(--soft);
-  font-family: "Courier New", monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding-top: 3px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.honor-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-size: 1rem;
+}
+
+.honor-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+
+.honor-role {
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
 }
 
 .honor-item h3 {
-  margin: 0 0 6px;
-  font-size: 1.08rem;
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .honor-item p {
-  margin: 0;
+  margin: 5px 0 0;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
 }
 
 .copyright {
@@ -735,10 +769,31 @@ a:hover {
 
 @media (max-width: 640px) {
   .publication,
-  .news-row,
-  .honor-item {
+  .news-row {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .honors-list {
+    padding: 0 16px;
+  }
+
+  .honor-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 12px;
+    padding: 18px 0;
+  }
+
+  .honor-icon {
+    display: none;
+  }
+
+  .honor-item h3 {
+    font-size: 0.92rem;
+  }
+
+  .honor-item time {
+    font-size: 0.75rem;
   }
 
   .experience-item {

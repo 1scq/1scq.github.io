@@ -213,6 +213,21 @@ const siteData = {
   ],
   honors: [
     {
+      date: "2026/10",
+      competition: "RoboCup National Competition",
+      award: "National Second Prize",
+    },
+    {
+      date: "2026/10",
+      competition: "Xi'an Jiaotong University",
+      award: "Third-Class Scholarship",
+    },
+    {
+      date: "2026/10",
+      competition: "Xi'an Jiaotong University",
+      award: "Outstanding Student",
+    },
+    {
       date: "2026/08",
       competition: "RoboCup Special Competition — 3D Object Recognition",
       award: "National First Prize",
