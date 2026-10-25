@@ -602,9 +602,7 @@ a:hover {
 }
 
 .highlight-author {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
+  font-weight: 700;
 }
 
 .pub-links a,
@@ -751,6 +749,10 @@ a:hover {
     align-items: center;
     text-align: center;
     padding: 40px 24px;
+  }
+
+  .avatar {
+    margin-inline: auto;
   }
 
   .section-nav {

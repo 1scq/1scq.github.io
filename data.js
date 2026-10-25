@@ -128,7 +128,7 @@ const siteData = {
       pageUrl: "https://arxiv.org/abs/2609.17210",
       image: "./assets/fluxvla-system-overview.png",
       imageAlt: "FluxVLA platform overview: data processing, policy training, simulation evaluation, and robot deployment",
-      venue: "arXiv preprint, 2026.09",
+      venue: "Tech Report, 2026.09",
       authors: [
         { name: "Yinhao Li" },
         { name: "Weixin Mao" },
