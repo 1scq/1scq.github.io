@@ -69,6 +69,23 @@ a:hover {
   justify-content: space-between;
 }
 
+.sidebar-bottom {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.visitor-globe {
+  width: 100%;
+  max-width: 210px;
+  margin-inline: auto;
+}
+
+.visitor-globe canvas,
+.visitor-globe iframe,
+.visitor-globe img {
+  max-width: 100%;
+}
+
 .avatar {
   width: 160px;
   height: 160px;
