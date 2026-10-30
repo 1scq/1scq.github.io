@@ -280,24 +280,20 @@ const renderSidebar = () => {
       </nav>
     </div>
     <div class="sidebar-bottom">
-      <div id="visitor-globe" class="visitor-globe" role="region" aria-label="Visitor locations"></div>
+      <div id="visitor-map" class="visitor-map" role="region" aria-label="Visitor locations"></div>
       <p class="copyright">© <span id="current-year"></span> ${escapeHtml(profile.name)}</p>
     </div>
   `;
 };
 
-const loadVisitorGlobe = () => {
-  const container = document.querySelector("#visitor-globe");
-  if (!container || document.getElementById("mmvst_globe")) return;
+const loadVisitorMap = () => {
+  const container = document.querySelector("#visitor-map");
+  if (!container || document.getElementById("mapmyvisitors")) return;
   const script = document.createElement("script");
   script.type = "text/javascript";
-  script.id = "mmvst_globe";
-  script.src = "https://mapmyvisitors.com/globe.js?d=FiJMGun6n1KOk90yAyfoKnpEDMk13Rwb62TOlnrhoPE";
+  script.id = "mapmyvisitors";
+  script.src = "https://mapmyvisitors.com/map.js?d=M0H0x-1X4U8kbcmTckfyL6dFA0BPxgudneSv2vhNesM&cl=ffffff&w=a";
   script.async = true;
-  // The vendor checks visibility on window scroll, while our sidebar scrolls independently.
-  document.querySelector("#sidebar").addEventListener("scroll", () => {
-    window.dispatchEvent(new Event("scroll"));
-  }, { passive: true });
   container.append(script);
 };
 
@@ -594,7 +590,7 @@ const init = () => {
   bindImageLightbox();
   bindWeChatDialog();
   bindActiveNav();
-  loadVisitorGlobe();
+  loadVisitorMap();
 };
 
 init();

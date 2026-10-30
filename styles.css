@@ -74,15 +74,15 @@ a:hover {
   margin-top: 32px;
 }
 
-.visitor-globe {
+.visitor-map {
   width: 100%;
   max-width: 210px;
   margin-inline: auto;
 }
 
-.visitor-globe canvas,
-.visitor-globe iframe,
-.visitor-globe img {
+.visitor-map canvas,
+.visitor-map iframe,
+.visitor-map img {
   max-width: 100%;
 }
 
