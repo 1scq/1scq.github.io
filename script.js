@@ -171,7 +171,11 @@ const renderPublications = (items) =>
             item.image
               ? `<div class="pub-media">
                   <button class="pub-image-wrapper" type="button" aria-haspopup="dialog" aria-label="${escapeHtml(`View full-size image: ${item.title}`)}">
-                    <img class="pub-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" />
+                    <img class="pub-image" src="${escapeHtml(item.image)}"${item.hoverImage ? ` data-hover-image="${escapeHtml(item.hoverImage)}"` : ""} alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" />
+                    ${item.coverLabel ? `<span class="pub-cover-overlay" aria-hidden="true">
+                      <span class="pub-cover-label">${escapeHtml(item.coverLabel)}</span>
+                      <span class="pub-cover-title">${escapeHtml(item.coverTitle || item.title)}</span>
+                    </span>` : ""}
                   </button>
                 </div>`
               : ""
@@ -197,12 +201,44 @@ const renderPublications = (items) =>
     )
     .join("");
 
+const renderProjects = (items) =>
+  items.map((item) => `
+    <article class="project-item">
+      <a class="project-logo" href="${escapeHtml(item.projectUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`Visit ${item.title}`)}">
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(`${item.title} logo`)}" loading="lazy" decoding="async" />
+      </a>
+      <div class="project-copy">
+        <div class="project-heading">
+          <h3><a href="${escapeHtml(item.projectUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
+          <a class="project-stars" href="${escapeHtml(item.codeUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${item.title} stars on GitHub`)}">
+            <img src="${escapeHtml(item.starsBadge)}" alt="GitHub stars" loading="lazy" />
+          </a>
+        </div>
+        <p>${escapeHtml(item.description)}</p>
+        <div class="project-links pub-links">
+          <a href="${escapeHtml(item.projectUrl)}" target="_blank" rel="noreferrer">View project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          <a href="${escapeHtml(item.codeUrl)}" target="_blank" rel="noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+          ${(item.mediaLinks || []).map((link) => `<a href="${escapeHtml(link.url)}" title="${escapeHtml(link.title)}" target="_blank" rel="noreferrer"><i class="fa-brands fa-weixin" aria-hidden="true"></i> ${escapeHtml(link.name)}</a>`).join("")}
+        </div>
+      </div>
+    </article>
+  `).join("");
+
 const renderHonors = (items) =>
   items
     .map(
       (item) => `
         <li class="honor-item">
-          <span class="honor-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+          ${item.image ? `
+            <button class="honor-image-wrapper" type="button" aria-haspopup="dialog" aria-label="${escapeHtml(`View certificate: ${item.competition} — ${item.award}`)}">
+              <img src="${escapeHtml(item.image)}" alt="${escapeHtml(`${item.competition} — ${item.award} certificate`)}" loading="lazy" decoding="async" />
+              <span class="honor-image-hint" aria-hidden="true">View certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </button>
+          ` : `<div class="honor-image-placeholder" aria-hidden="true"><i class="fa-solid fa-award"></i></div>`}
+          <div class="honor-card-top">
+            <span class="honor-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+            <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
+          </div>
           <div class="honor-copy">
             <div class="honor-heading">
               <h3>${escapeHtml(item.award)}</h3>
@@ -210,7 +246,6 @@ const renderHonors = (items) =>
             </div>
             <p>${escapeHtml(item.competition)}</p>
           </div>
-          <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
         </li>
       `
     )
@@ -236,11 +271,11 @@ const renderSidebar = () => {
       </div>
       <nav class="section-nav" aria-label="Section navigation">
         <a href="#about">About</a>
-        <a href="#research-interests">Research Interests</a>
         <a href="#news">News</a>
         <a href="#education">Education</a>
         <a href="#experience">Work Experience</a>
         <a href="#publications">Publications</a>
+        <a href="#projects">Open-source Projects</a>
         <a href="#honors">Honors</a>
       </nav>
     </div>
@@ -250,7 +285,7 @@ const renderSidebar = () => {
 
 const renderContent = () => {
   const content = document.querySelector("#content");
-  const { about, researchInterests, news, education, workExperience, publications, honors } = siteData;
+  const { about, news, education, workExperience, publications, projects, honors } = siteData;
   content.innerHTML = `
     <section class="intro-grid">
       <section id="about" class="section-block">
@@ -265,12 +300,6 @@ const renderContent = () => {
         </div>
       </section>
     </section>
-    <section id="research-interests" class="section-block research-interests-block">
-      <h2>Research Interests</h2>
-      <ul class="research-interests-list">
-        ${researchInterests.map((interest) => `<li>${escapeHtml(interest)}</li>`).join("")}
-      </ul>
-    </section>
     <section id="education" class="section-block experience-block">
       <h2>Education</h2>
       <div class="experience-list">${renderExperience(education)}</div>
@@ -283,9 +312,15 @@ const renderContent = () => {
       <h2>Selected Publications <span>(* equal contribution)</span></h2>
       ${renderPublications(publications)}
     </section>
+    <section id="projects" class="section-block projects-block">
+      <h2>Open-source Projects</h2>
+      ${renderProjects(projects)}
+    </section>
     <section id="honors" class="section-block honors-block">
       <h2>Honors & Awards</h2>
-      <ul class="honors-list">${renderHonors(honors)}</ul>
+      <div id="honors-scroll" class="honors-scroll" tabindex="0" role="region" aria-label="Honors and awards">
+        <ul class="honors-list">${renderHonors([...honors.filter((item) => item.image), ...honors.filter((item) => !item.image)])}</ul>
+      </div>
     </section>
     <dialog id="wechat-contact" class="wechat-dialog" aria-labelledby="wechat-title" aria-describedby="wechat-description">
       <div class="wechat-heading">
@@ -295,7 +330,7 @@ const renderContent = () => {
       <p id="wechat-description">Scan the QR code to add me on WeChat.</p>
       <img class="wechat-qr" src="${escapeHtml(siteData.profile.wechatQrImage)}" alt="Danny's WeChat contact QR code" />
     </dialog>
-    <dialog class="image-lightbox" aria-label="Enlarged publication image">
+    <dialog class="image-lightbox" aria-label="Enlarged image">
       <div class="lightbox-backdrop" aria-hidden="true"></div>
       <img class="lightbox-image" alt="" />
       <button class="lightbox-close" type="button" aria-label="Close enlarged image" autofocus>
@@ -328,6 +363,26 @@ const bindWeChatDialog = () => {
   dialog.addEventListener("close", () => {
     document.documentElement.classList.remove("wechat-active");
     trigger?.focus({ preventScroll: true });
+  });
+};
+
+const bindPublicationHover = () => {
+  document.querySelectorAll(".pub-image[data-hover-image]").forEach((image) => {
+    const button = image.closest(".pub-image-wrapper");
+    const poster = image.getAttribute("src");
+    let hovered = false;
+    let focused = false;
+    const update = () => {
+      image.src = hovered || focused ? image.dataset.hoverImage : poster;
+    };
+    button.addEventListener("pointerenter", (event) => {
+      if (event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+      hovered = true;
+      update();
+    });
+    button.addEventListener("pointerleave", () => { hovered = false; update(); });
+    button.addEventListener("focus", () => { focused = true; update(); });
+    button.addEventListener("blur", () => { focused = false; update(); });
   });
 };
 
@@ -382,7 +437,7 @@ const bindImageLightbox = () => {
     closing = false;
   };
 
-  document.querySelectorAll(".pub-image-wrapper").forEach((button) => {
+  document.querySelectorAll(".pub-image-wrapper, .honor-image-wrapper").forEach((button) => {
     button.addEventListener("click", async () => {
       if (dialog.open) return;
       const thumbnail = button.querySelector("img");
@@ -435,6 +490,55 @@ const bindBibtexToggle = () => {
   });
 };
 
+const bindHonorsScroll = () => {
+  const viewport = document.querySelector(".honors-scroll");
+  const list = viewport.querySelector(".honors-list");
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const originals = [...list.children];
+  if (!originals.length) {
+    return;
+  }
+  originals.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelectorAll("button").forEach((control) => { control.tabIndex = -1; });
+    list.append(clone);
+  });
+  let paused = motion.matches;
+  let hovered = false;
+  let focused = false;
+  let touching = false;
+  let visible = false;
+  let lastTime = 0;
+  let position = viewport.scrollLeft;
+  let frame;
+  const canRun = () => !paused && !hovered && !focused && !touching && visible && !document.hidden && !document.querySelector(".image-lightbox").open;
+  const tick = (time) => {
+    if (canRun()) {
+      const distance = list.children[originals.length].offsetLeft - originals[0].offsetLeft;
+      position += Math.min(time - lastTime, 64) * 0.028;
+      if (distance > 0) position %= distance;
+      viewport.scrollLeft = position;
+    } else {
+      position = viewport.scrollLeft;
+    }
+    lastTime = time;
+    frame = requestAnimationFrame(tick);
+  };
+  viewport.addEventListener("pointerenter", (event) => { hovered = event.pointerType === "mouse"; });
+  viewport.addEventListener("pointerleave", () => { hovered = false; });
+  viewport.addEventListener("focusin", () => { focused = true; });
+  viewport.addEventListener("focusout", () => { focused = false; });
+  viewport.addEventListener("touchstart", () => { touching = true; }, { passive: true });
+  viewport.addEventListener("touchend", () => { touching = false; });
+  viewport.addEventListener("touchcancel", () => { touching = false; });
+  motion.addEventListener("change", () => { paused = motion.matches; });
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(viewport);
+  window.addEventListener("pagehide", () => cancelAnimationFrame(frame));
+  window.addEventListener("pageshow", () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(tick); });
+  frame = requestAnimationFrame(tick);
+};
+
 const bindActiveNav = () => {
   const navLinks = [...document.querySelectorAll(".section-nav a")];
   const sections = navLinks
@@ -467,6 +571,8 @@ const init = () => {
   renderContent();
   document.querySelector("#current-year").textContent = new Date().getFullYear();
   bindBibtexToggle();
+  bindHonorsScroll();
+  bindPublicationHover();
   bindImageLightbox();
   bindWeChatDialog();
   bindActiveNav();

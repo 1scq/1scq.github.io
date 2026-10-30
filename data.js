@@ -36,13 +36,6 @@ const siteData = {
     notice:
       "I am currently seeking Fall 2029 Ph.D. opportunities. If my research interests align with yours, please feel free to contact me."
   },
-  researchInterests: [
-    "Humanoid Robotics",
-    "World Models",
-    "Video Generation Models",
-    "Reinforcement Learning",
-    "Representation Learning",
-  ],
   news: [
     {
       date: "2026/09",
@@ -101,8 +94,11 @@ const siteData = {
     {
       title: "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
       pageUrl: "https://arxiv.org/abs/2610.30044",
-      image: "./assets/sp-hlm-teaser.webp",
-      imageAlt: "SP-HLM teaser: sparse-pose interface comparison, simulated and real humanoid robot tasks, and experimental results",
+      image: "./assets/sp-hlm-cover.jpg",
+      hoverImage: "./assets/sp-hlm-cover.gif",
+      coverLabel: "SP-HLM",
+      coverTitle: "Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
+      imageAlt: "SP-HLM demo: simulated manipulation tasks and real humanoid robot experiments",
       venue: "arXiv preprint, Under Review, 2026.10",
       authors: [
         { name: "Zhaohui Yang*" },
@@ -122,12 +118,21 @@ const siteData = {
         "A sparse-pose-driven framework connecting vision-language-action prediction, real-time motion generation, and whole-body control for humanoid loco-manipulation. Five task-critical body poses and a learned motion prior enable coordinated behavior in simulation and on a real humanoid robot.",
       paperUrl: "https://arxiv.org/pdf/2610.30044",
       projectUrl: "https://sp-hlm.github.io/",
+      bibtex: `@article{yang2026sphlm,
+  title={{SP-HLM}: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation},
+  author={Yang, Zhaohui and Lin, Quanbao and Shi, Chengqi and Weng, Zhenglang and Lin, Jicheng and Chen, Boyu and Zhu, Tengjie and Ren, Guanzhu and Xu, Jiahao and Feng, Yang and Yang, Xiaokang and Mu, Yao},
+  journal={arXiv preprint arXiv:2610.30044},
+  year={2026},
+  doi={10.48550/arXiv.2610.30044},
+  url={https://arxiv.org/abs/2610.30044}
+}`,
     },
     {
       title: "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
       pageUrl: "https://arxiv.org/abs/2609.17210",
-      image: "./assets/fluxvla-system-overview.png",
-      imageAlt: "FluxVLA platform overview: data processing, policy training, simulation evaluation, and robot deployment",
+      image: "./assets/fluxvla-demo-cover.png",
+      hoverImage: "./assets/fluxvla-demo-cover.gif",
+      imageAlt: "FluxVLA Engine real-robot demos: mobile manipulation, tabletop tidying, bimanual cloth folding, and object retrieval from a bag",
       venue: "Tech Report, 2026.09",
       authors: [
         { name: "Yinhao Li" },
@@ -211,11 +216,39 @@ const siteData = {
     },
     */
   ],
+  projects: [
+    {
+      title: "FluxVLA Engine",
+      image: "./assets/fluxvla-logo.png",
+      description: "An open-source VLA engineering platform for embodied intelligence, unifying data processing, policy training, simulation evaluation, and real-robot deployment.",
+      projectUrl: "https://fluxvla.limxdynamics.com/",
+      codeUrl: "https://github.com/FluxVLA/FluxVLA",
+      starsBadge: "https://img.shields.io/github/stars/FluxVLA/FluxVLA?style=social",
+      mediaLinks: [
+        {
+          name: "具身智能之心",
+          title: "高分模型难上真机？FluxVLA Engine正在解决具身的工程泥潭问题",
+          url: "https://mp.weixin.qq.com/s?__biz=MzY5NDQyODU2MQ==&mid=2247532404&idx=1&sn=92a190290ed7ec6c1c955ce9e72ecf2c",
+        },
+        {
+          name: "量子位",
+          title: "工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
+          url: "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936983&idx=1&sn=4f00f0370cb922a29f253b1bb840f045",
+        },
+        {
+          name: "human five",
+          title: "FluxVLA 万字拆解：具身智能从训练到真机的完整工程链路",
+          url: "https://mp.weixin.qq.com/s?__biz=Mzg5Mzg3ODEwNA==&mid=2247509026&idx=1&sn=2909ad7e6400dae461ad18a0621c3e32",
+        },
+      ],
+    },
+  ],
   honors: [
     {
       date: "2026/10",
       competition: "RoboCup National Competition",
       award: "National Second Prize",
+      image: "./assets/certificates/robocup-national-2026.jpg",
     },
     {
       date: "2026/10",
@@ -231,22 +264,26 @@ const siteData = {
       date: "2026/08",
       competition: "RoboCup Special Competition — 3D Object Recognition",
       award: "National First Prize",
+      image: "./assets/certificates/robocup-special-2026.jpg",
       role: "Team Captain",
     },
     {
       date: "2026/05",
       competition: "Mathematical Contest in Modeling (MCM)",
       award: "Honorable Mention",
+      image: "./assets/certificates/mcm-2026.jpg",
     },
     {
       date: "2025/11",
       competition: "China Undergraduate Physics Experiment Competition (CUPET)",
+      image: "./assets/certificates/cupet-2025.jpg",
       award: "National First Prize",
     },
     {
       date: "2025/05",
-      competition: "Lanqiao Cup",
+      competition: "Lanqiao Cup — C/C++ Programming (University Group A)",
       award: "Provincial Third Prize",
+      image: "./assets/certificates/lanqiao-cup-2025-redacted.jpg",
     },
   ],
 };
