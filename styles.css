@@ -729,6 +729,17 @@ a:hover {
   line-height: 1.6;
 }
 
+.project-copy,
+.pub-body,
+.sidebar-top {
+  min-width: 0;
+}
+
+.project-copy,
+.pub-body {
+  overflow-wrap: anywhere;
+}
+
 .project-links {
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -815,9 +826,7 @@ a:hover {
 }
 
 .honor-image-placeholder {
-  color: var(--accent);
   background: linear-gradient(135deg, var(--accent-soft), #f8fafc);
-  font-size: 3rem;
 }
 
 .honor-image-hint {
@@ -880,17 +889,6 @@ a:hover {
   white-space: nowrap;
 }
 
-.honor-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  color: var(--accent);
-  background: var(--accent-soft);
-  font-size: 1.4rem;
-}
-
 .honor-heading {
   display: flex;
   flex-direction: column;
@@ -944,7 +942,7 @@ a:hover {
 
 @media (max-width: 900px) {
   .page-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .sidebar {
@@ -959,6 +957,19 @@ a:hover {
 
   .avatar {
     margin-inline: auto;
+  }
+
+  .sidebar-top {
+    width: 100%;
+  }
+
+  .profile-meta li,
+  .social-links {
+    justify-content: center;
+  }
+
+  .profile-meta li {
+    overflow-wrap: anywhere;
   }
 
   .section-nav {
@@ -977,7 +988,7 @@ a:hover {
 
 @media (max-width: 640px) {
   .project-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
 
@@ -988,7 +999,7 @@ a:hover {
 
   .publication,
   .news-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
 
@@ -1003,11 +1014,20 @@ a:hover {
   }
 
   .experience-copy {
-    max-width: 82%;
+    max-width: 100%;
   }
 
   .experience-item h3 {
     font-size: 1.16rem;
+  }
+
+  .experience-item h3 span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .experience-item h3 i {
+    flex-shrink: 0;
   }
 
   .experience-item p,

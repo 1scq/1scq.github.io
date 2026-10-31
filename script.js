@@ -234,9 +234,8 @@ const renderHonors = (items) =>
               <img src="${escapeHtml(item.image)}" alt="${escapeHtml(`${item.competition} — ${item.award} certificate`)}" loading="lazy" decoding="async" />
               <span class="honor-image-hint" aria-hidden="true">View certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </button>
-          ` : `<div class="honor-image-placeholder" aria-hidden="true"><i class="fa-solid fa-award"></i></div>`}
+          ` : `<div class="honor-image-placeholder" aria-hidden="true"></div>`}
           <div class="honor-card-top">
-            <span class="honor-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
             <time datetime="${escapeHtml(item.date.replace("/", "-"))}">${escapeHtml(item.date)}</time>
           </div>
           <div class="honor-copy">
