@@ -192,7 +192,7 @@ const slides=[
     "time": "0:40",
     "cls": "cover-slide",
     "source": "图：共产党员网 / 陈晋文章配图",
-    "html": "<div class=\"hero-photo\"><img src=\"assets/desk.jpg\" alt=\"1961年毛泽东在广州伏案工作，桌旁摆有《资治通鉴》\"></div><div class=\"hero-copy\"><h1>书香伴随<em>一生</em></h1><p class=\"subtitle\">从《毛泽东的读书生活》<br>理解理论学习与马克思主义中国化</p><p class=\"course\">毛泽东思想和中国特色社会主义理论体系概论 · 小组读书报告</p><button class=\"start\" data-next>翻开这本书 <span>↗</span></button></div>",
+    "html": "<div class=\"hero-photo\"><img src=\"assets/desk.jpg\" alt=\"1961年毛泽东在广州伏案工作，桌旁摆有《资治通鉴》\"></div><div class=\"hero-copy\"><h1>书香伴随<em>一生</em></h1><p class=\"subtitle\">从《毛泽东的读书生活》<br>理解理论学习与马克思主义中国化</p><p class=\"course\">毛泽东思想和中国特色社会主义理论体系概论 · 小组读书报告</p><p class=\"cover-meta\"><span>第二组</span><span>2026年11月</span></p><button class=\"start\" data-next>翻开这本书 <span>↗</span></button></div>",
     "notes": "各位老师、同学，大家好。今天我们小组汇报的题目是“书香伴随一生”。\n毛泽东同志一生勤奋好学。青年时代，他在读书中寻求救国救民的道路；革命战争年代，他在艰苦环境中坚持研读马列著作；新中国成立后，他又围绕社会主义建设，学习经济、历史和科学等方面的知识。读书伴随着他的革命生涯，也成为他生活中长久的习惯。\n《毛泽东的读书生活》记述了这段经历。下面，我们从这本书的出版和作者讲起，介绍几段读书故事，学习其中勤学善思、联系实际的读书方法。",
     "imageNotes": []
   },
