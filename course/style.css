@@ -29,3 +29,11 @@
 .study-volume h3{font-size:30px;line-height:1.5;margin:12px 0}
 .study-volume p{font-size:22px}
 .study-slide .lined-block{padding:18px 0}
+.folio-verse{height:calc(100% - 65px);display:flex;flex-direction:column;justify-content:center;gap:15px}
+.folio-verse p{font:34px/1.6 var(--serif);color:#383b2d}
+.folio-dialogue{height:calc(100% - 65px);display:flex;flex-direction:column;justify-content:center;gap:28px}
+.folio-dialogue small{font:20px/1.6 var(--sans);color:#8b4c3e}
+.folio-dialogue p,.folio-question{font:39px/1.65 var(--serif);color:#323629}
+.folio-question{margin:20px 0 25px;border-left:2px solid #a55d46;padding-left:20px}
+.extra-notes{border-top:1px solid var(--line);margin-top:24px;padding-top:16px}
+.extra-notes summary{cursor:pointer;color:var(--red);margin-bottom:16px;font-size:17px}

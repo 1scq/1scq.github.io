@@ -51,7 +51,7 @@ test('the folio renderer supports new cards and retains existing image pages', (
   const start = app.indexOf('function folioLeft(');
   const end = app.indexOf('function folioRight(', start);
   vm.runInContext(app.slice(start, end), context);
-  const cards = vm.runInContext('folioLeft(folioBooks["poem-evidence"][0])', context);
+  const cards = vm.runInContext('folioLeft(folioBooks["poem-evidence"][1])', context);
   const image = vm.runInContext('folioLeft(folioBooks.wartime[0])', context);
   const fallback = vm.runInContext('folioLeft(folioBooks.methods[2])', context);
   assert.match(cards, /folio-card-list/);
@@ -59,4 +59,22 @@ test('the folio renderer supports new cards and retains existing image pages', (
   assert.match(image, /assets\/yanan.jpg/);
   assert.match(image, /data-zoom-image/);
   assert.match(fallback, /拿破仑研究/);
+});
+
+test('poem, dialogue and rights material retain their distinct presentation', () => {
+  const app = fs.readFileSync(path.join(directory, 'app.js'), 'utf8');
+  vm.runInContext(app.slice(app.indexOf('function folioLeft('), app.indexOf('function folioMarkup(')), context);
+  const poem = vm.runInContext('folioLeft(folioBooks["poem-evidence"][0])', context);
+  const question = vm.runInContext('folioRight(folioBooks["poem-evidence"][0])', context);
+  const dialogue = vm.runInContext('folioLeft(folioBooks.science[0])', context);
+  const answer = vm.runInContext('folioRight(folioBooks.science[0])', context);
+  const rights = vm.runInContext('folioLeft(folioBooks["economy-debate"][1])', context);
+  assert.match(poem, /少小离家老大回/);
+  assert.doesNotMatch(question, /少小离家老大回/);
+  assert.match(question, /folio-question/);
+  assert.match(dialogue, /你也要钻研科技的书/);
+  assert.doesNotMatch(dialogue, /冶金工业/);
+  assert.match(answer, /冶金工业/);
+  assert.doesNotMatch(answer, /1958年9月/);
+  assert.match(rights, /受教育/);
 });
