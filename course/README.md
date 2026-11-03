@@ -17,3 +17,5 @@ node --check course/slides.js
 node --check course/app.js
 node --test tests/course.test.cjs
 ```
+
+动效按讲述顺序安排：第4页时间线从左到右展开；第10页先出现诗文，再依次呈现查证过程；第13页依次展示三个分析步骤与结论；第17页依次呈现三项学习实践。每页约1.2—1.6秒完成，进入页面时自动播放，最终布局不变；减少动态效果和打印模式直接显示完整内容。
