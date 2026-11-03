@@ -46,35 +46,32 @@ test('all presentation images are local and available offline', () => {
   }
 });
 
-test('the folio renderer supports new cards and retains existing image pages', () => {
-  const app = fs.readFileSync(path.join(directory, 'app.js'), 'utf8');
-  const start = app.indexOf('function folioLeft(');
-  const end = app.indexOf('function folioRight(', start);
-  vm.runInContext(app.slice(start, end), context);
-  const cards = vm.runInContext('folioLeft(folioBooks["poem-evidence"][1])', context);
-  const image = vm.runInContext('folioLeft(folioBooks.wartime[0])', context);
-  const fallback = vm.runInContext('folioLeft(folioBooks.methods[2])', context);
-  assert.match(cards, /folio-card-list/);
-  assert.doesNotMatch(cards, /拿破仑研究/);
-  assert.match(image, /assets\/yanan.jpg/);
-  assert.match(image, /data-zoom-image/);
-  assert.match(fallback, /拿破仑研究/);
+test('only two focused book components remain and headings are declarative', () => {
+  const books = slides.flatMap(s => [...s.html.matchAll(/data-folio="([^"]+)"/g)].map(m => m[1]));
+  assert.deepEqual(Array.from(books), ['philosophy', 'economy-debate']);
+  for (const s of slides) {
+    assert.doesNotMatch(s.title, /[？?]/);
+    for (const h of s.html.matchAll(/<h[123][^>]*>([\s\S]*?)<\/h[123]>/g)) assert.doesNotMatch(h[1].replace(/<[^>]+>/g, ''), /[？?]/);
+    assert.doesNotMatch(s.html, /style="[^"]*font/);
+  }
+  assert.equal(slides.length, 19);
+  assert.equal(slides.filter(s => s.title.includes('实践中读书')).length, 1);
 });
 
-test('poem, dialogue and rights material retain their distinct presentation', () => {
+test('static cases retain the poem, science and reading methods', () => {
+  const poem = slides.find(s => s.title.includes('史料查证'));
+  assert.match(poem.html, /少小离家老大回/);
+  assert.match(poem.html, /旧唐书·贺知章传/);
+  const science = slides.find(s => s.title.includes('宇宙飞行'));
+  for (const text of ['人的知识面要宽些', '1616型高速普通车床', '人造卫星']) assert.ok(science.html.includes(text));
+  assert.match(slides.find(s => s.title.includes('四种方法')).html, /对照起来读/);
+});
+
+test('retained books render both documentary images and economic discussion', () => {
   const app = fs.readFileSync(path.join(directory, 'app.js'), 'utf8');
   vm.runInContext(app.slice(app.indexOf('function folioLeft('), app.indexOf('function folioMarkup(')), context);
-  const poem = vm.runInContext('folioLeft(folioBooks["poem-evidence"][0])', context);
-  const question = vm.runInContext('folioRight(folioBooks["poem-evidence"][0])', context);
-  const dialogue = vm.runInContext('folioLeft(folioBooks.science[0])', context);
-  const answer = vm.runInContext('folioRight(folioBooks.science[0])', context);
-  const rights = vm.runInContext('folioLeft(folioBooks["economy-debate"][1])', context);
-  assert.match(poem, /少小离家老大回/);
-  assert.doesNotMatch(question, /少小离家老大回/);
-  assert.match(question, /folio-question/);
-  assert.match(dialogue, /你也要钻研科技的书/);
-  assert.doesNotMatch(dialogue, /冶金工业/);
-  assert.match(answer, /冶金工业/);
-  assert.doesNotMatch(answer, /1958年9月/);
-  assert.match(rights, /受教育/);
+  assert.match(vm.runInContext('folioLeft(folioBooks.philosophy[0])', context), /assets\/reading.jpg/);
+  assert.match(vm.runInContext('folioLeft(folioBooks["economy-debate"][0])', context), /公有化之后/);
+  assert.match(vm.runInContext('folioRight(folioBooks["economy-debate"][0])', context), /把事情说得太容易了/);
+  assert.match(vm.runInContext('folioLeft(folioBooks["economy-debate"][1])', context), /受教育/);
 });
