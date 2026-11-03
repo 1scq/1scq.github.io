@@ -49,3 +49,15 @@
 @media print{.slide{background:#fff!important;color:#292a24;--bg:#fff;--ink:#292a24;--muted:#57594f;--line:#c4beaf;--red:#984c3e}.hero-photo:after{background:linear-gradient(0deg,#fff,transparent 40%)}.start{display:none!important}}
 .slide .folio-leaf-content{display:flex;flex-direction:column}.slide .folio-leaf-content h3{flex:none}.slide .folio-image,.slide .folio-card-list,.slide .folio-reading-list{flex:1;min-height:0;height:auto}.slide .folio-right blockquote{font-size:var(--quote-size)}.slide .science-grid .text-excerpt p{font-size:var(--quote-size)}
 .slide{animation:none}
+
+/* Philosophy: a stable image and quotation, with a shared top edge. */
+.philosophy-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.philosophy-layout .photo .frame{height:445px;background:var(--line)}
+.philosophy-layout .photo img{width:100%;height:100%;max-height:none;object-fit:contain;filter:none}
+.philosophy-extract{padding-top:0}
+.philosophy-book{display:flex;align-items:baseline;gap:28px;border-bottom:1px solid var(--line);padding-bottom:22px}
+.slide .philosophy-book h3{font-size:30px;line-height:1.5}
+.slide .philosophy-book p{font-size:26px;line-height:1.5}
+.philosophy-quotation{padding-top:30px}
+.slide .philosophy-quotation>p{font-size:26px;line-height:1.5;color:var(--muted)}
+.philosophy-quotation blockquote{margin:25px 0 0;border-left:2px solid var(--red);padding-left:30px;font:var(--quote-size)/1.9 var(--serif);color:var(--ink)}

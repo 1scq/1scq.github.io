@@ -46,9 +46,9 @@ test('all presentation images are local and available offline', () => {
   }
 });
 
-test('only two focused book components remain and headings are declarative', () => {
+test('only the economic discussion retains a book component and headings are declarative', () => {
   const books = slides.flatMap(s => [...s.html.matchAll(/data-folio="([^"]+)"/g)].map(m => m[1]));
-  assert.deepEqual(Array.from(books), ['philosophy', 'economy-debate']);
+  assert.deepEqual(Array.from(books), ['economy-debate']);
   for (const s of slides) {
     assert.doesNotMatch(s.title, /[？?]/);
     for (const h of s.html.matchAll(/<h[123][^>]*>([\s\S]*?)<\/h[123]>/g)) assert.doesNotMatch(h[1].replace(/<[^>]+>/g, ''), /[？?]/);
