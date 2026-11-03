@@ -511,13 +511,13 @@ const slides = [
     "section": "叁 · 书页中的故事",
     "time": "1分10秒",
     "source": "原书相关篇章、逄先知回忆｜课程联系：《反对本本主义》",
-    "html": "<h2>阅读地方志与坚持调查研究</h2><div class=\"slide-body columns\"><div><h3>1958年 · 成都</h3><div class=\"lined-block\"><h3>阅读地方志</h3><p>《四川省志》《蜀本纪》<br>《华阳国志》</p></div><div class=\"lined-block\"><h3>了解都江堰</h3><p>《都江堰水利述要》《灌县志》</p></div></div><div class=\"investigation-copy\"><blockquote class=\"text-excerpt\"><p>“一是向人做调查；<br>一是向书本做调查”</p></blockquote><p>从志书了解历史、地理与风土人情，<br>向当地人了解经济和人民生活，<br>把历史记载与现实情况结合起来。</p></div></div>",
+    "html": "<h2>阅读地方志与坚持调查研究</h2><p class=\"context-line\">1958年 · 成都</p><div class=\"slide-body investigation-layout\"><section class=\"investigation-panel\"><blockquote>“一是向书本做调查”</blockquote><div class=\"investigation-materials\"><div><h3>阅读地方志</h3><p>《四川省志》《蜀本纪》<br>《华阳国志》</p></div><div><h3>了解都江堰</h3><p>《都江堰水利述要》<br>《灌县志》</p></div></div></section><section class=\"investigation-panel\"><blockquote>“一是向人做调查”</blockquote><div class=\"investigation-materials\"><div><h3>了解现实情况</h3><p>向当地人了解经济<br>与人民生活。</p></div><div><h3>结合两种材料</h3><p>把历史记载<br>与现实情况结合起来。</p></div></div></section></div>",
     "notes": "毛泽东到一个地方，常常既向当地人了解情况，也借阅有关这个地方的书籍。\n1958年3月，他到成都主持会议，先后要来《四川省志》《蜀本纪》《华阳国志》，以及《都江堰水利述要》《灌县志》等资料阅读，还在书上作了批画。会议期间，他挑选有关四川的古典诗词，同相关史料一起印发给与会人员。\n地方志记述了历史沿革、地理和风俗；向当地人调查，则能了解现实中的政治、经济、文化和人民生活。读书和调查相结合，使学习同当地的实际情况联系起来。逄先知的这段回忆，具体记下了毛泽东读书与工作相结合的习惯。\n地方志与现实调查各有作用。志书可以告诉我们沿革、地理和文化线索，但它有成书年代，也有编纂者的取舍。当地人的讲述更接近现实，却同样受各自经历和观察范围影响。两者相互参照，有助于发现材料中的空缺和矛盾。",
     "excerpts": [
       "investigate"
     ],
     "imageNotes": [],
-    "cls": ""
+    "cls": "investigation-slide"
   },
   {
     "title": "认真研读的四种方法",

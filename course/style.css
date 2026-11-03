@@ -155,3 +155,13 @@
   .economy-comparison tbody tr{animation:reading-rise .55s ease-out .15s both}
   .economy-comparison tbody tr:nth-child(2){animation-delay:.45s}
 }
+
+/* Local history and field inquiry share the same baseline and two-row rhythm. */
+.investigation-slide .slide-body{margin-top:32px}
+.investigation-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
+.investigation-panel{display:flex;flex-direction:column;min-width:0}
+.investigation-panel>blockquote{margin:0 0 30px;padding:4px 0 4px 24px;border-left:2px solid var(--red);font:var(--quote-size)/1.65 var(--serif);color:var(--ink)}
+.investigation-materials{display:grid;grid-template-rows:1fr 1fr;flex:1;gap:24px}
+.investigation-materials>div{border-top:1px solid var(--line);padding-top:22px}
+.slide .investigation-materials h3{font-size:var(--heading-size);line-height:1.5;margin-bottom:14px}
+.slide .investigation-materials p{font-size:var(--body-size);line-height:1.75}
