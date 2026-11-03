@@ -1,4 +1,4 @@
-const imagePreloads=['desk','cover','yanan','reading','luxun','red-chamber'].map(name=>{const image=new Image();image.src=`assets/${name}.jpg`;return image;});
+const imagePreloads=['desk','cover','yanan','reading','luxun','red-chamber','protracted-war'].map(name=>{const image=new Image();image.src=`assets/${name}.jpg`;return image;});
 const stage=document.querySelector('#stage');let current=Math.min(slides.length-1,Math.max(0,(parseInt(location.hash.slice(1))||1)-1));const $=s=>document.querySelector(s);const num=n=>String(n).padStart(2,'0');
 function fit(){const v=$('#viewport');stage.style.setProperty('--scale',Math.min(v.clientWidth/1440,v.clientHeight/810));}
 function markup(s,i){return `<article class="slide ${s.cls||''}" aria-label="第${i+1}页 ${s.title}">${s.html}</article>`;}

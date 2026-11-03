@@ -46,9 +46,9 @@ test('all presentation images are local and available offline', () => {
   }
 });
 
-test('only the economic discussion retains a book component and headings are declarative', () => {
+test('slides use direct layouts and declarative headings', () => {
   const books = slides.flatMap(s => [...s.html.matchAll(/data-folio="([^"]+)"/g)].map(m => m[1]));
-  assert.deepEqual(Array.from(books), ['economy-debate']);
+  assert.deepEqual(Array.from(books), []);
   for (const s of slides) {
     assert.doesNotMatch(s.title, /[？?]/);
     for (const h of s.html.matchAll(/<h[123][^>]*>([\s\S]*?)<\/h[123]>/g)) assert.doesNotMatch(h[1].replace(/<[^>]+>/g, ''), /[？?]/);
@@ -67,11 +67,16 @@ test('static cases retain the poem, science and reading methods', () => {
   assert.match(slides.find(s => s.title.includes('四种方法')).html, /对照起来读/);
 });
 
-test('retained books render both documentary images and economic discussion', () => {
-  const app = fs.readFileSync(path.join(directory, 'app.js'), 'utf8');
-  vm.runInContext(app.slice(app.indexOf('function folioLeft('), app.indexOf('function folioMarkup(')), context);
-  assert.match(vm.runInContext('folioLeft(folioBooks.philosophy[0])', context), /assets\/reading.jpg/);
-  assert.match(vm.runInContext('folioLeft(folioBooks["economy-debate"][0])', context), /公有化之后/);
-  assert.match(vm.runInContext('folioRight(folioBooks["economy-debate"][0])', context), /把事情说得太容易了/);
-  assert.match(vm.runInContext('folioLeft(folioBooks["economy-debate"][1])', context), /受教育/);
+test('application image matches its subject and both economic discussions are directly visible', () => {
+  const application = slides.find(s => s.cls === 'application-slide');
+  assert.match(application.html, /assets\/protracted-war.jpg/);
+  assert.doesNotMatch(application.html, /assets\/reading.jpg/);
+  assert.ok(application.imageNotes.some(note => note.includes('12371.cn')));
+  const economy = slides.find(s => s.cls === 'economy-comparison-slide');
+  assert.match(economy.html, /<table class="economy-comparison">/);
+  assert.match(economy.html, /教科书的论述/);
+  assert.match(economy.html, /毛泽东的意见/);
+  assert.match(economy.html, /把事情说得太容易了/);
+  assert.match(economy.html, /最根本的权利/);
+  assert.doesNotMatch(economy.html, /data-folio/);
 });
