@@ -61,3 +61,30 @@
 .philosophy-quotation{padding-top:30px}
 .slide .philosophy-quotation>p{font-size:26px;line-height:1.5;color:var(--muted)}
 .philosophy-quotation blockquote{margin:25px 0 0;border-left:2px solid var(--red);padding-left:30px;font:var(--quote-size)/1.9 var(--serif);color:var(--ink)}
+
+/* A single entrance for the annotated pages, settling into the fixed layout. */
+@media screen and (prefers-reduced-motion:no-preference){
+  .philosophy-slide .philosophy-layout>.photo{
+    position:relative;
+    z-index:2;
+    transform-origin:center center;
+    animation:annotated-book-open 1.65s cubic-bezier(.22,.7,.24,1) both;
+  }
+  .philosophy-slide .philosophy-extract{
+    animation:annotation-reveal .55s ease-out 1.15s both;
+  }
+}
+@keyframes annotated-book-open{
+  0%{opacity:0;transform:translateX(calc(50% + 32px)) scale(.64)}
+  18%{opacity:1;transform:translateX(calc(50% + 32px)) scale(.82)}
+  55%{opacity:1;transform:translateX(calc(50% + 32px)) scale(1.08)}
+  100%{opacity:1;transform:translateX(0) scale(1)}
+}
+@keyframes annotation-reveal{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media print,(prefers-reduced-motion:reduce){
+  .philosophy-slide .philosophy-layout>.photo,
+  .philosophy-slide .philosophy-extract{animation:none;opacity:1;transform:none}
+}
