@@ -1,0 +1,590 @@
+{
+  "source": "https://ideal.cs.unc.edu/assets/robots/",
+  "files": [
+    {
+      "path": "g1/g1.urdf",
+      "bytes": 39605,
+      "sha256": "3ec790ffae8d9e2f3f5aed73ddc769d3494ec43973aa0559c85c3bc911ba6c9a"
+    },
+    {
+      "path": "go2/go2.urdf",
+      "bytes": 22768,
+      "sha256": "1625ae996b1ca16e5911beef78d14bf038653a6a1bdabe2034b677691d7fdb31"
+    },
+    {
+      "path": "fr3_wuji_left/fr3_wuji_left.urdf",
+      "bytes": 36222,
+      "sha256": "4acff312c4bee8ead0c4e6e1e89cf2a81f7721702e6b051191d1d8dd9df58dea"
+    },
+    {
+      "path": "fr3_wuji_right/fr3_wuji_right.urdf",
+      "bytes": 37402,
+      "sha256": "284ca69fda71ddaa01b1708446c8db9375aaa9d0a8d369dc2bc87b6b8c207265"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger1_link1.glb",
+      "bytes": 26964,
+      "sha256": "cb076f6b3a6196a6717a6d390cd61340385c06b118233571c5b020676d7e2184"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger1_link2.glb",
+      "bytes": 24712,
+      "sha256": "5f8c380b47d343272f16fbd195d1a89707e9eabe4da914f29c0ac436c99ca38f"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger1_link3.glb",
+      "bytes": 24584,
+      "sha256": "8080dca61f507e17933405901b75f02073d839f3b59696454a52a5635e20b4b2"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger1_link4.glb",
+      "bytes": 24704,
+      "sha256": "93120ea58559c6bb4b432b87f525a2266d09e762ec6cfc5f5b3479f5acc46fd1"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger1_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "cb074f5b65f5be6e2f4636b39a03052642b442a9ba5df2b16b354bbf5c88f1b2"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger2_link1.glb",
+      "bytes": 24640,
+      "sha256": "8027dbe4a2555a69019285c71162412f4771c00475e058975b9398f6e66b6281"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger2_link2.glb",
+      "bytes": 24684,
+      "sha256": "6840bca9ad8c84ec6bd28c91144e3d8eec2f00aca1a37c654d6145d28a8213d1"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger2_link3.glb",
+      "bytes": 24900,
+      "sha256": "08c3b4d43ae325b1e8e4e1adb736f568669d1264f2a7dbd55acc97281ab6935d"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger2_link4.glb",
+      "bytes": 24744,
+      "sha256": "316869725d628b63d086d9a5965abc67f18b09a368792d92a8d6eb41ffe6fef0"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger2_tip_link.glb",
+      "bytes": 24728,
+      "sha256": "bffd0364055ca131c0c98b037a27f8faedfc9f704eb2dd2682d2bfa335ee1131"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger3_link1.glb",
+      "bytes": 24644,
+      "sha256": "34de2b56c7970d72be023c9a9976c4c17bf6a2d06ff0b4e07ca8829e4683e026"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger3_link2.glb",
+      "bytes": 24684,
+      "sha256": "9aaa4c697bd3044d13ff8c78203601b6a481d89af037ff664eb0107c73d623d7"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger3_link3.glb",
+      "bytes": 24900,
+      "sha256": "4072286036c5ac1f83f7665ff6f258f00f19c443dc04d11ebac8ffa2cff82200"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger3_link4.glb",
+      "bytes": 24744,
+      "sha256": "ffe702c7cfe644ebc1957a93a0f4dcb1cc7388a5ab0835efe28a46954f154304"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger3_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "15f1e9ff7a4b9487c2aad13e65c5de78fe5d664350c1423c3355380a0521cbbb"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger4_link1.glb",
+      "bytes": 24644,
+      "sha256": "875c9077d8fcd9a166f4f2fe4985116ea59f20aa864111f1e939889a4b13d688"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger4_link2.glb",
+      "bytes": 24684,
+      "sha256": "8fe84038ee147456dbbc34180564256caad7587ece5dfc55b5d13f44160806e0"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger4_link3.glb",
+      "bytes": 24900,
+      "sha256": "6daf91b9ab6a562c8deb778226bee043ccc7ce28258d1a6487b7fc24bbf65490"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger4_link4.glb",
+      "bytes": 24744,
+      "sha256": "d40c727c72e9a2bcdc2ff1728f00b6c8f3bc055c00772e79f75b0951bdd6eb11"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger4_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "ed49e49d8ea10ec56d6306d75a2290f14fe937667a0437da4844b67f074c5bf3"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger5_link1.glb",
+      "bytes": 24640,
+      "sha256": "b98759dd71075d37e36a52a689b3067ea768e489665dd7a1b85fdb9d45fc06c3"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger5_link2.glb",
+      "bytes": 24680,
+      "sha256": "03708f85604ed8bba3a32dc618a9485a5f1f9b1436994383c7c03683d9dcf6b4"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger5_link3.glb",
+      "bytes": 24912,
+      "sha256": "edad423f8bb97229201b6b8c5f42c90d479e50eb39ac60fe1eb210afcdd0b486"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger5_link4.glb",
+      "bytes": 24744,
+      "sha256": "31c59236fd59b4e91cc0e6d476f3bf5bcb9dad5368932ec9f44418caf63b7a2b"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_finger5_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "ab64ba15ce847ddf74b08e23ae2ac9ece5a023061ae29de29f7e40f8e7dbb2c6"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/left_palm_link.glb",
+      "bytes": 58276,
+      "sha256": "41543d4f061e64768e7ee032608b9088c025aaf9e81e70ce4f67cf90ba6a7c38"
+    },
+    {
+      "path": "fr3_wuji_left/meshes/link5.glb",
+      "bytes": 175432,
+      "sha256": "41363a7c8270d29e48db5c0a7cacdc3940b36f8e7fffb6bd43106d1805ea0550"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link0.glb",
+      "bytes": 420632,
+      "sha256": "4f1624cdb0bff943f76b34e74b402e14228f0471b5cd17861ef19e8a9b9512a9"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link1.glb",
+      "bytes": 138276,
+      "sha256": "2d1e8f5dcac0b07ac36cab647e6271811ee1f04fa183ed02ab71f25599be2461"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link2.glb",
+      "bytes": 143524,
+      "sha256": "e31fc6b74cae68681dbc3a4b9c50e3e08e2d50906e8f1f130b53d1e2e916d40b"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link3.glb",
+      "bytes": 133256,
+      "sha256": "1317e7986dbff0e77387ad1fc65bc620aa27269c4f3e82a004703b4e33e331b5"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link4.glb",
+      "bytes": 139748,
+      "sha256": "108af474ce22f9707f5158cb2aee44425bf0ae8823b010498a56575af81e7bef"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link5.glb",
+      "bytes": 175484,
+      "sha256": "a6357cf6b0f2d67b6e36e341ac406d45dd6dd3853081b45d8d51e7d8945ce2ae"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link6.glb",
+      "bytes": 195264,
+      "sha256": "83cd89c642d614cccab1c97a91126ed2db3c010729e5d374db2d8eaab87ff9d5"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/link7.glb",
+      "bytes": 110420,
+      "sha256": "72f8ae0223806b531d1edf9374cdefb5b334cc2c3c82ec3569455f099cd40948"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger1_link1.glb",
+      "bytes": 24420,
+      "sha256": "60d872c68694ff8c0a075a48c1fc2ee5c467484a761ac0f88baa0b040758be61"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger1_link2.glb",
+      "bytes": 24656,
+      "sha256": "71b7718ffe6b72ed594b1f138e09458688427d50c0b01489e75e92d09f0b002d"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger1_link3.glb",
+      "bytes": 24600,
+      "sha256": "41f0b6e01ee0ba7d6fdbf1724208528b42c8936d80765e32917674613c0a32ef"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger1_link4.glb",
+      "bytes": 24732,
+      "sha256": "252d18fafdf8a07648f8a7ee2b39bfbda298d2b16c2b9a7b7c29453322b27eff"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger1_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "caad87e2d61bec7f0705595b25ff591eeb9144c36d4c9b28cf4fd6da3b652c5d"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger2_link1.glb",
+      "bytes": 24640,
+      "sha256": "af1df067f14fb57e4e6be8daa58918713f12ba13e9db6d5981fd4a454936d18c"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger2_link2.glb",
+      "bytes": 24684,
+      "sha256": "7ae6abd3cac690f8aae54677b2f27a50abb8032b8ea5db9f76901f9626fff2c2"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger2_link3.glb",
+      "bytes": 24784,
+      "sha256": "af1ac439c31fa9a8428a0f0ccbaefceb36d907c3e8c0b590c0b3bc27356187f4"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger2_link4.glb",
+      "bytes": 24748,
+      "sha256": "d146ccd17e72cd1cfc74d5199aafba784b2cf54b860e6519207ae619c588a0a2"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger2_tip_link.glb",
+      "bytes": 24736,
+      "sha256": "421a92b289659688b2fe8b74841b61e06bf03a794afc0b756bdb0aec1d02b321"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger3_link1.glb",
+      "bytes": 24640,
+      "sha256": "b47d8bbb3f50d594a5940ae1cb966a1d61f3466202680f2c06d18635feacb4e3"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger3_link2.glb",
+      "bytes": 24684,
+      "sha256": "1a09b172b33a13daf9e77f7b502da2e2a596c370855abbe682c2b52faf63f713"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger3_link3.glb",
+      "bytes": 24784,
+      "sha256": "e0a39f7d0ae1cae7197aed99bdffda762c8f14d418ac04c70664d6f637ea3314"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger3_link4.glb",
+      "bytes": 24744,
+      "sha256": "20c03ace6331714b13bde52680b8fa5d3275c68977a5546785d52a491b22dbad"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger3_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "9eb4bc2c3f9d28fb0afb8b24eb1e2c3f266f33ea1d24b905141552bb8551a889"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger4_link1.glb",
+      "bytes": 24640,
+      "sha256": "10e3926abe451dd6c749ab541c052f6d85716a4d5c6b8647732cdffcf3090574"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger4_link2.glb",
+      "bytes": 24684,
+      "sha256": "0e8c3ce1d1f7c931206db1ae7c5c4a4ba4ac1be6b714cce58bf088611b45268f"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger4_link3.glb",
+      "bytes": 24780,
+      "sha256": "3f80db48b63b1aade4dce822cc0a6b2567885ee2ac0999fe5ba67bc5826f6c24"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger4_link4.glb",
+      "bytes": 24744,
+      "sha256": "7967bdd0cf7b2bfc6ab1d8f8dca14f5cad1c9e73c1da312e77952ddd1b1f3ae6"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger4_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "405913d35fd3cc7cffd53bc09fbc76c0e52d031bd8eaa1a8b59c3692c0ee0d92"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger5_link1.glb",
+      "bytes": 24640,
+      "sha256": "918a446a9b2eb14b3ad1151f4dd12a5d3cf5f0586336cef15e2497e35143cd52"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger5_link2.glb",
+      "bytes": 24684,
+      "sha256": "1fe2912dd4708fabbb5b02279f8fe103b920d61634029b72a0b00b107cfa9b8b"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger5_link3.glb",
+      "bytes": 24784,
+      "sha256": "b9f5c3cc86b7014413d5acc778deabaee1fd89e9c7b0212006854df2af9ea847"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger5_link4.glb",
+      "bytes": 24744,
+      "sha256": "b30456840f62ec856c8c9b455dd66bdab2cce7a52feb72f71cfb82cba7d7a911"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_finger5_tip_link.glb",
+      "bytes": 24732,
+      "sha256": "4df5a490b6a083408e41fa293da7ed87eefb7f3471939007a1a9428f7f59564a"
+    },
+    {
+      "path": "fr3_wuji_right/meshes/right_palm_link.glb",
+      "bytes": 58284,
+      "sha256": "0d78068e544800a47a860705e95c0a44465cdabf38091c68b74fdecdfe91b2e6"
+    },
+    {
+      "path": "g1/meshes/head_link.glb",
+      "bytes": 54256,
+      "sha256": "a705c495227d74137fc3428503716182c4b4b5edb5d24221114f78896cc78ed7"
+    },
+    {
+      "path": "g1/meshes/left_ankle_pitch_link.glb",
+      "bytes": 24712,
+      "sha256": "d3ec30c662158fd8d1caf4107ebf37cf0903056eb704c9734924b1a8b43bed41"
+    },
+    {
+      "path": "g1/meshes/left_ankle_roll_link.glb",
+      "bytes": 52424,
+      "sha256": "270a9ec67c646f3674a5f5cd26269d3a656f48a27632bd0266075685e5596a96"
+    },
+    {
+      "path": "g1/meshes/left_elbow_link.glb",
+      "bytes": 29112,
+      "sha256": "40ec38024f1613e6905adeb268135ff3da5df7624a924c9a7d561346bb4cac3f"
+    },
+    {
+      "path": "g1/meshes/left_hand_index_0_link.glb",
+      "bytes": 24680,
+      "sha256": "cdfe5ad0e7cce055dd909d0444f0d776d994beb1943a7ff40b211fa23975bffd"
+    },
+    {
+      "path": "g1/meshes/left_hand_index_1_link.glb",
+      "bytes": 24780,
+      "sha256": "23cb5a6e38181ded94e82a5e0f89a478511b081426920d09d9b1eb4306ad6472"
+    },
+    {
+      "path": "g1/meshes/left_hand_palm_link.glb",
+      "bytes": 36288,
+      "sha256": "ea4f10491b49122520129236b0bf32d67c6b43426d297c24ff250e26660a323c"
+    },
+    {
+      "path": "g1/meshes/left_hand_thumb_0_link.glb",
+      "bytes": 5912,
+      "sha256": "2992c1ede1373ca2d74979baf9c764965e485d4b8ea2122ad0a4d27c50c98f0d"
+    },
+    {
+      "path": "g1/meshes/left_hand_thumb_1_link.glb",
+      "bytes": 24680,
+      "sha256": "c72c0b4a1901fa77b194c94ec9b6a6b5a69368a4c636b3a55696902c107cddd0"
+    },
+    {
+      "path": "g1/meshes/left_hand_thumb_2_link.glb",
+      "bytes": 24780,
+      "sha256": "eac634a69dbf21bb06f87430556c476b88759f7c6d2ea1cb187e8299bc1ca04c"
+    },
+    {
+      "path": "g1/meshes/left_hip_pitch_link.glb",
+      "bytes": 40144,
+      "sha256": "e467199776e47d94c9e408f66f60e0a301187591478e85f0c82c43fa42049dcd"
+    },
+    {
+      "path": "g1/meshes/left_hip_roll_link.glb",
+      "bytes": 48396,
+      "sha256": "3a3923b7c828cca654dc669c129eb885804646c0853e01c2d193ba4a2e421fbe"
+    },
+    {
+      "path": "g1/meshes/left_hip_yaw_link.glb",
+      "bytes": 63996,
+      "sha256": "fc61b186300940a1d9907207d1b947d6b8983865297536e27c63d17eb4015d2e"
+    },
+    {
+      "path": "g1/meshes/left_knee_link.glb",
+      "bytes": 72228,
+      "sha256": "67d9ef30c80bc44708afac70a9dc9b5be8bb57d115d4344cd72e32fd8cd2b52d"
+    },
+    {
+      "path": "g1/meshes/left_shoulder_pitch_link.glb",
+      "bytes": 28112,
+      "sha256": "066860e88abe893451b7ecdd70cd41ddcc46ebfc3b980b4f2a94e53f24a15705"
+    },
+    {
+      "path": "g1/meshes/left_shoulder_roll_link.glb",
+      "bytes": 38724,
+      "sha256": "4f2a424e86e162e3eb9e146c425b01f0f1e291fc5a67433211626730cb39292a"
+    },
+    {
+      "path": "g1/meshes/left_shoulder_yaw_link.glb",
+      "bytes": 44724,
+      "sha256": "1eafbeea0e5c7996ba1207e65a86ece6a965b8686b8a24518243aa9b948d122a"
+    },
+    {
+      "path": "g1/meshes/left_wrist_pitch_link.glb",
+      "bytes": 25408,
+      "sha256": "7337749429e82427c92405becf56b1aebebcea5946e77b3f1d2d3c4ef5b40234"
+    },
+    {
+      "path": "g1/meshes/left_wrist_roll_link.glb",
+      "bytes": 24700,
+      "sha256": "51c393811cc56db31a6c995fc2681ba0dcff1957e370534760eff1df293cb6c3"
+    },
+    {
+      "path": "g1/meshes/left_wrist_yaw_link.glb",
+      "bytes": 24716,
+      "sha256": "b0a1df3296f87f8d887439e4b23bd7e9f592c6f6e415f9374343da2db3a7718a"
+    },
+    {
+      "path": "g1/meshes/logo_link.glb",
+      "bytes": 25476,
+      "sha256": "32cb919f7f2516f62c2ae61e27336cb9dc201287ffa3eed163bc3a7b6881f127"
+    },
+    {
+      "path": "g1/meshes/pelvis.glb",
+      "bytes": 49232,
+      "sha256": "01e98aa055acda13e3e752d127d9b25f4a26998f2afe47e1ddd7d82b742432f4"
+    },
+    {
+      "path": "g1/meshes/pelvis_contour_link.glb",
+      "bytes": 48704,
+      "sha256": "4647308cd3fc38476be8c0cced59f920ace52d836dadadd0e1e72dda218cb7e4"
+    },
+    {
+      "path": "g1/meshes/right_ankle_pitch_link.glb",
+      "bytes": 24716,
+      "sha256": "8d2d1f4df174931ed26501c2cdc3af2d24852495065b9fa5e0e274a63a454ce1"
+    },
+    {
+      "path": "g1/meshes/right_ankle_roll_link.glb",
+      "bytes": 52428,
+      "sha256": "d3690d1b7d7866fbdd4b1508de9312e9eb2a239b4ccf72cfdce54b46d8904921"
+    },
+    {
+      "path": "g1/meshes/right_elbow_link.glb",
+      "bytes": 28804,
+      "sha256": "aac9181b56e5db57ef8e37448a37eeab0d6f3edbac66744d31ce6fd17a54ab2c"
+    },
+    {
+      "path": "g1/meshes/right_hand_index_0_link.glb",
+      "bytes": 24680,
+      "sha256": "f0e758798c2a8e70c20f442f9e9efda745276276b986081ae198135ec6cfbdeb"
+    },
+    {
+      "path": "g1/meshes/right_hand_index_1_link.glb",
+      "bytes": 24780,
+      "sha256": "b4d0c60ff4be55eec904c531007e039fb8ff797ad4393f0eb421b3e0c1604405"
+    },
+    {
+      "path": "g1/meshes/right_hand_palm_link.glb",
+      "bytes": 36292,
+      "sha256": "6fd34e47e1c8fd579abbd4248b5c3cd2d3ca024813dc0c6cb2146c6d19d806a0"
+    },
+    {
+      "path": "g1/meshes/right_hand_thumb_0_link.glb",
+      "bytes": 5908,
+      "sha256": "65a331bd7240b6e072d004e700f18c8e9c7bea514eccef0e22f31958c4736258"
+    },
+    {
+      "path": "g1/meshes/right_hand_thumb_1_link.glb",
+      "bytes": 24680,
+      "sha256": "5bd5684133b928ee8d496b36c1a58762e64053adf7122e09dc5c2c8541916df2"
+    },
+    {
+      "path": "g1/meshes/right_hand_thumb_2_link.glb",
+      "bytes": 24780,
+      "sha256": "fc594ed5610ec9d1c767fab22e952e574e617a46f9616a2beb8583d61b761ec4"
+    },
+    {
+      "path": "g1/meshes/right_hip_pitch_link.glb",
+      "bytes": 40200,
+      "sha256": "999634008f491324726638fc30c60ae0ef933febf4e6017cbe1e94023c425249"
+    },
+    {
+      "path": "g1/meshes/right_hip_roll_link.glb",
+      "bytes": 48396,
+      "sha256": "7754c9e55d0b2ed6933f60306c1b1e38e493dcaa041dd6c9dedd20fa57cdc1d9"
+    },
+    {
+      "path": "g1/meshes/right_hip_yaw_link.glb",
+      "bytes": 63996,
+      "sha256": "c30efe1a3d8ec406962a8161ba42369a8a210977c6f39edd1396d7a3280dfb93"
+    },
+    {
+      "path": "g1/meshes/right_knee_link.glb",
+      "bytes": 72228,
+      "sha256": "3c971b4fa1f6147a581b045adeef62b7d2b1157f83894b217c5d81b56cb85968"
+    },
+    {
+      "path": "g1/meshes/right_shoulder_pitch_link.glb",
+      "bytes": 28108,
+      "sha256": "e3a759bcd89ce1e3cb8e7e45c1b66cea845ba75c58facfa2a21cd20eab41e9e7"
+    },
+    {
+      "path": "g1/meshes/right_shoulder_roll_link.glb",
+      "bytes": 38724,
+      "sha256": "5f683db32b5b1de99d5d19e6a98c98db0fafa3d0bdba9d245d5ad4c833098172"
+    },
+    {
+      "path": "g1/meshes/right_shoulder_yaw_link.glb",
+      "bytes": 44724,
+      "sha256": "8b57365aa93343e6ab2c7d9d25bd5b602bfb0480d8b17566dca45140826bf1ae"
+    },
+    {
+      "path": "g1/meshes/right_wrist_pitch_link.glb",
+      "bytes": 25408,
+      "sha256": "512e08c875ed1cda5d57cba9db440b9788dd040d449e1977fbcec98ec3ee769a"
+    },
+    {
+      "path": "g1/meshes/right_wrist_roll_link.glb",
+      "bytes": 24704,
+      "sha256": "71a5e12d9922b92807a5d238a96bb7c191d952e189108ddfccb3dfae44de14d7"
+    },
+    {
+      "path": "g1/meshes/right_wrist_yaw_link.glb",
+      "bytes": 24968,
+      "sha256": "cf7096f26d4a0db43a0d93bd4a8a628d0c1a1fc3eff156403dc94b1d7f2adab4"
+    },
+    {
+      "path": "g1/meshes/torso_link_rev_1_0.glb",
+      "bytes": 148248,
+      "sha256": "149fa1246547c3577a7ac2366ea576acc4195a5449ff60f62747b59705a75781"
+    },
+    {
+      "path": "g1/meshes/waist_roll_link_rev_1_0.glb",
+      "bytes": 24648,
+      "sha256": "83988a285c6500821cf4d8934801eff9affccc8e89dfd284709c6aeb2a666fda"
+    },
+    {
+      "path": "g1/meshes/waist_yaw_link_rev_1_0.glb",
+      "bytes": 38556,
+      "sha256": "dc98e6788ac554d338540997a6120e84b96f739f88381283a3b1bf34b75a3bd4"
+    },
+    {
+      "path": "go2/meshes/base.glb",
+      "bytes": 366372,
+      "sha256": "f1b13347eec9061e43c16349bb647adba1c7b2bc125d5812bb3358f07a449b73"
+    },
+    {
+      "path": "go2/meshes/calf.glb",
+      "bytes": 69896,
+      "sha256": "21c8c6db450a52d565a6c5abd1ecaaf04a116db920dbd9923a7582e65d40de8c"
+    },
+    {
+      "path": "go2/meshes/calf_mirror.glb",
+      "bytes": 69856,
+      "sha256": "0941071ee737e4c4970d89c2739ab72f296b40e5fd9f6c36fc0ab4102c2885dd"
+    },
+    {
+      "path": "go2/meshes/foot.glb",
+      "bytes": 29688,
+      "sha256": "7c5512e2307fd3241035fb064c24320bbcac5b3c7f91f76b9ed5ff248a45045c"
+    },
+    {
+      "path": "go2/meshes/hip.glb",
+      "bytes": 120592,
+      "sha256": "5ac1d07a2ca80129664b88381ce8ded6c57b49bc14be6eb86ac8884ce39f2871"
+    },
+    {
+      "path": "go2/meshes/thigh.glb",
+      "bytes": 120188,
+      "sha256": "dae25bd72aaefce43f73ef0dcc88fc9059331f23d3fc3e29b7887f3d96b71212"
+    },
+    {
+      "path": "go2/meshes/thigh_mirror.glb",
+      "bytes": 120136,
+      "sha256": "14a23a79a9143ffa246f0e090a26531f28aa801ece9ea533803f5555cce7df47"
+    }
+  ]
+}

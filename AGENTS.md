@@ -20,6 +20,9 @@ docs/
 ## Build, Test, and Development Commands
 No build system is configured yet. When adding one, document the canonical commands here and in the project README.
 
+Current static site: no build step. Preview with `python3 -m http.server 8000 --bind 127.0.0.1`.
+Run the automated checks with `node --test tests/*.test.*`.
+
 - `make build` or equivalent: create production artifacts.
 - `make test` or equivalent: run the full automated test suite.
 - `make lint` or equivalent: run formatting and lint checks.
