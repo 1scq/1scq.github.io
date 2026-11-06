@@ -1,16 +1,86 @@
 :root {
   --bg-body: #ffffff;
+  color-scheme: light;
+  --surface: #ffffff;
+  --glass: rgb(255 255 255 / 80%);
+  --intro-ink: #26332e;
+  --intro-glow: #ffffff;
+  --notice-text: #9f1239;
   --bg-sidebar: #f8fafc;
   --line: #e2e8f0;
   --text: #0f172a;
   --muted: #475569;
   --soft: #94a3b8;
   --accent: #be123c;
+  --on-accent: #ffffff;
   --accent-soft: rgba(190, 18, 60, 0.05);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --font-main: "Inter", "PingFang SC", "Noto Sans SC", sans-serif;
   --font-serif: "Playfair Display", "Times New Roman", serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-body: #111113;
+  --bg-sidebar: #19191c;
+  --surface: #202024;
+  --glass: rgb(32 32 36 / 88%);
+  --line: #36363d;
+  --text: #f1f1f4;
+  --muted: #b9b9c3;
+  --soft: #9696a3;
+  --accent: #fb8eaa;
+  --on-accent: #111113;
+  --accent-soft: rgb(251 142 170 / 10%);
+  --intro-ink: #f1f1f4;
+  --intro-glow: #111113;
+  --notice-text: #fba5bc;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 20%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+.theme-control {
+  position: fixed;
+  top: max(20px, env(safe-area-inset-top));
+  right: max(20px, env(safe-area-inset-right));
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-control label {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.theme-control select {
+  min-height: 32px;
+  max-width: 170px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text);
+  font: 500 0.8rem var(--font-main);
+  cursor: pointer;
+}
+
+.theme-control select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.theme-control option {
+  background: var(--surface);
+  color: var(--text);
 }
 
 * {
@@ -30,6 +100,9 @@
 }
 
 html {
+  background: var(--bg-body);
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--soft) var(--bg-body);
   scroll-behavior: smooth;
 }
 
@@ -64,9 +137,20 @@ a:hover {
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* The profile scrolls when needed without adding a second visible page rail. */
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* This is a programmatic navigation target, not an interactive control. */
+.content:focus {
+  outline: none;
 }
 
 .sidebar-bottom {
@@ -97,7 +181,7 @@ a:hover {
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, #c81e4d 0%, #ef6a8c 100%);
-  border: 4px solid #fff;
+  border: 4px solid var(--surface);
   box-shadow: var(--shadow-md);
   margin-bottom: 24px;
 }
@@ -174,7 +258,7 @@ a:hover {
   height: 36px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +269,7 @@ a:hover {
 
 .social-links a:hover {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   text-decoration: none;
 }
 
@@ -201,7 +285,7 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 16px;
   color: var(--text);
-  background: #fff;
+  background: var(--surface);
   overflow: auto;
 }
 
@@ -229,14 +313,14 @@ a:hover {
   height: 36px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface);
   color: var(--muted);
   cursor: pointer;
 }
 
 .wechat-close:hover {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .wechat-dialog p {
@@ -310,6 +394,8 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
+  /* Keep the fixed animation inside the visible part of its own section. */
+  clip-path: inset(0 0 var(--stage-clip, 0px) 0);
 }
 
 .flow-intro.is-exited .flow-intro-stage {
@@ -344,8 +430,8 @@ a:hover {
 .intro-identity {
   flex-shrink: 0;
   text-align: center;
-  color: #26332e;
-  text-shadow: 0 2px 24px #fff, 0 0 40px #fff;
+  color: var(--intro-ink);
+  text-shadow: 0 2px 24px var(--intro-glow), 0 0 40px var(--intro-glow);
 }
 
 .intro-name {
@@ -385,11 +471,11 @@ a:hover {
   gap: 8px;
   min-height: 40px;
   padding: 8px 14px;
-  border: 1px solid rgb(38 51 46 / 24%);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgb(255 255 255 / 78%);
+  background: var(--glass);
   backdrop-filter: blur(8px);
-  color: #26332e;
+  color: var(--intro-ink);
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
@@ -405,7 +491,7 @@ a:hover {
 .intro-contact:focus-visible {
   color: var(--accent);
   border-color: var(--accent);
-  background: #fff;
+  background: var(--surface);
 }
 
 @media (max-width: 960px) {
@@ -466,7 +552,7 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--muted);
-  background: rgb(255 255 255 / 80%);
+  background: var(--glass);
   cursor: pointer;
   font: 500 13px var(--font-main);
 }
@@ -541,7 +627,7 @@ a:hover {
   padding: 16px 18px;
   border-left: 4px solid var(--accent);
   background: var(--accent-soft);
-  color: #9f1239;
+  color: var(--notice-text);
   border-radius: 0 6px 6px 0;
 }
 
@@ -561,7 +647,7 @@ a:hover {
   grid-template-columns: 86px 1fr;
   gap: 16px;
   padding: 10px 0;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--line);
 }
 
 .news-row:last-child {
@@ -589,7 +675,7 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -693,7 +779,7 @@ a:hover {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   cursor: zoom-in;
   transition: border-color 240ms ease, box-shadow 240ms ease;
@@ -799,7 +885,7 @@ a:hover {
   height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface);
   color: var(--text);
   font-size: 1.1rem;
   cursor: pointer;
@@ -861,7 +947,7 @@ a:hover {
   padding: 4px 10px;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #fff;
+  background: var(--surface);
   color: var(--muted);
   font: inherit;
   font-size: 0.8rem;
@@ -997,7 +1083,7 @@ a:hover {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: #fff;
+  background: var(--surface);
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
@@ -1025,7 +1111,7 @@ a:hover {
   padding: 12px;
   border: 0;
   border-bottom: 1px solid var(--line);
-  background: #f8fafc;
+  background: var(--bg-sidebar);
 }
 
 .honor-image-wrapper {
@@ -1041,7 +1127,7 @@ a:hover {
 }
 
 .honor-image-placeholder {
-  background: linear-gradient(135deg, var(--accent-soft), #f8fafc);
+  background: linear-gradient(135deg, var(--accent-soft), var(--bg-sidebar));
 }
 
 .honor-image-hint {
@@ -1098,7 +1184,7 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--accent);
-  background: #fff;
+  background: var(--surface);
   font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

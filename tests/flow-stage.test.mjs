@@ -94,3 +94,17 @@ test("an opening scene can start from finished artwork instead of an empty noise
   s.tick(100);
   assert.equal(s.frames.at(-1).t, 5216);
 });
+
+
+test("scenes start with visible artwork and redraw immediately when returning from the homepage", () => {
+  const s = setup();
+  assert.equal(s.frames[0].t, 5000);
+  s.visible(true);
+  s.tick(100);
+  s.env.animation.setPaused(true);
+  const count = s.frames.length;
+  s.env.animation.setPaused(false);
+  assert.equal(s.frames.length, count + 1);
+  assert.equal(s.frames.at(-1).t, 5016);
+  assert.equal(s.pending.size, 1);
+});

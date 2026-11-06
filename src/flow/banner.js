@@ -12,25 +12,31 @@ async function initialize() {
   intro.classList.add("is-enhanced");
   const animation = effect.mount(canvas);
   intro.dataset.effect = effect.id;
-  animation.setColors({ ink: "215 35% 18%", red: "345 83% 41%" });
+  function updateColors() {
+    const dark = document.documentElement?.dataset.theme === "dark";
+    animation.setColors(dark
+      ? { ink: "240 12% 88%", paper: "240 6% 7%", red: "345 93% 77%" }
+      : { ink: "215 35% 18%", paper: "0 0% 100%", red: "345 83% 41%" });
+  }
+  updateColors();
+  window.addEventListener("themechange", updateColors);
   toggle.hidden = false;
   let paused = false;
   let scheduled = 0;
 
   function updateScroll() {
     scheduled = 0;
-    const progress = reduced.matches ? 0 : introProgress(
-      -intro.getBoundingClientRect().top,
-      intro.offsetHeight
-    );
+    const scrolled = Math.max(0, -intro.getBoundingClientRect().top);
+    const progress = introProgress(scrolled, intro.offsetHeight);
+    intro.style.setProperty("--stage-clip", `${Math.min(scrolled, intro.offsetHeight)}px`);
     const appearance = introAppearance(progress);
-    animation.setScatter?.(progress);
+    animation.setScatter?.(reduced.matches ? 0 : progress);
     animation.setPaused(paused || progress >= 1);
     intro.classList.toggle("is-exited", progress >= 1);
     intro.inert = progress >= 1;
     intro.style.setProperty("--stage-opacity", appearance.stageOpacity);
     intro.style.setProperty("--copy-opacity", appearance.copyOpacity);
-    intro.style.setProperty("--copy-offset", `${appearance.copyOffset}px`);
+    intro.style.setProperty("--copy-offset", `${reduced.matches ? 0 : appearance.copyOffset}px`);
     intro.style.setProperty("--effect-opacity", appearance.effectOpacity);
     intro.style.setProperty("--hint-opacity", appearance.hintOpacity);
   }

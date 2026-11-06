@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChengqiShi</title>
+    <script src="./src/theme.js"></script>
     <link rel="icon" href="./assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png" />
@@ -25,6 +26,14 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="theme-control">
+      <label for="theme-select"><span aria-hidden="true">◐</span><span class="sr-only">Color theme / 外观模式</span></label>
+      <select id="theme-select" aria-label="Color theme / 外观模式">
+        <option value="system">System · 跟随系统</option>
+        <option value="light">Light · 浅色</option>
+        <option value="dark">Dark · 深色</option>
+      </select>
+    </div>
     <section class="flow-intro" id="intro" aria-label="Welcome">
       <div class="flow-intro-stage">
         <canvas id="flow-canvas" aria-hidden="true"></canvas>

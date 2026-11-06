@@ -80,7 +80,7 @@ export function stage(canvas, scene) {
   let reduced = mq.matches, raf = 0, onScreen = false, lastFrame = -1e9, cost = 0, q = 0, slowSince = -1, fastSince = -1, failed = false;
   // The header animation's time: follows the latest frame; clicks and mouse events use it too, so they share one timeline
   // with the picture
-  let lastT = scene.startT ?? 0, lastWall = 0;
+  let lastT = scene.startT ?? scene.stillT ?? 0, lastWall = 0;
   const clock = () => (lastWall ? lastT + (performance.now() - lastWall) : performance.now() - t0);
 
   function render(t, dt, still) {
@@ -159,7 +159,12 @@ export function stage(canvas, scene) {
   if (reduced) still(); else render(lastT, 16, false);
 
   return {
-    setPaused(value) { paused = value; if (paused) stop(); else kick(); },
+    setPaused(value) {
+      if (paused === value) return;
+      paused = value;
+      if (paused) stop();
+      else { redraw(); kick(); }
+    },
     setColors({ ink: i, paper: p, red: r } = {}) {
       col.ink = hslToRgb(i) ?? col.ink; col.paper = hslToRgb(p) ?? col.paper; col.red = hslToRgb(r) ?? col.red;
       try { scene.colors?.(col); } catch (err) { console.error("hero colors failed", err); }

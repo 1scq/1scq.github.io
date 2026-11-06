@@ -42,6 +42,7 @@ test("scrolling down releases the homepage and scrolling back restores the openi
   assert.equal(s.properties.get("--effect-opacity"), 1);
   s.scroll(400);
   assert.equal(s.animation.scatter, 0.5);
+  assert.equal(s.properties.get("--stage-clip"), "400px");
   assert.equal(s.properties.get("--copy-opacity") < 1, true);
   assert.equal(s.animation.paused, false);
   s.scroll(800);
@@ -49,6 +50,7 @@ test("scrolling down releases the homepage and scrolling back restores the openi
   assert.equal(s.animation.paused, true);
   assert.equal(s.intro.inert, true);
   assert.equal(s.classes.has("is-exited"), true);
+  assert.equal(s.properties.get("--stage-clip"), "800px");
   assert.equal(s.properties.get("--stage-opacity"), 0);
   s.scroll(400);
   assert.equal(s.properties.get("--copy-opacity") < 1, true);
@@ -57,12 +59,20 @@ test("scrolling down releases the homepage and scrolling back restores the openi
   assert.equal(s.classes.has("is-exited"), false);
   s.scroll(0);
   assert.equal(s.properties.get("--stage-opacity"), 1);
+  assert.equal(s.properties.get("--stage-clip"), "0px");
 });
 
-test("reduced motion keeps the opening static during ordinary page scrolling", async () => {
+test("reduced motion still releases the homepage and restores the opening on return", async () => {
   const s = await setup();
   s.media.matches = true;
   s.scroll(800);
-  assert.equal(s.properties.get("--effect-opacity"), 1);
+  assert.equal(s.properties.get("--effect-opacity"), 0);
+  assert.equal(s.animation.scatter, 0);
+  assert.equal(s.animation.paused, true);
+  assert.equal(s.intro.inert, true);
+  s.scroll(0);
+  assert.equal(s.properties.get("--stage-opacity"), 1);
+  assert.equal(s.properties.get("--copy-offset"), "0px");
+  assert.equal(s.animation.paused, false);
   assert.equal(s.intro.inert, false);
 });
