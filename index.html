@@ -27,10 +27,13 @@
   <body>
     <section class="flow-intro" id="intro" aria-label="Welcome">
       <div class="flow-intro-stage">
-        <div id="robot-background" class="robot-background" aria-hidden="true"></div>
-        <canvas id="ripple-canvas" aria-hidden="true"></canvas>
+        <canvas id="flow-canvas" aria-hidden="true"></canvas>
         <div class="intro-copy">
-          <h1 class="intro-name">Danny<span>.</span>Shi</h1>
+          <div class="intro-identity">
+            <h1 class="intro-name">ChengqiShi</h1>
+            <p class="intro-chinese" lang="zh-CN">石澄錡</p>
+          </div>
+          <nav class="intro-contacts" id="intro-contacts" aria-label="Contact and profiles"></nav>
         </div>
         <a class="intro-enter" href="#content" aria-label="Enter homepage">
           <span class="intro-arrow" aria-hidden="true">↓</span>
@@ -47,10 +50,6 @@
 
     <script src="./data.js"></script>
     <script src="./script.js"></script>
-    <script type="importmap">
-      {"imports":{"three":"./assets/vendor/three/build/three.module.js","three/examples/jsm/":"./assets/vendor/three/examples/jsm/","urdf-loader":"./assets/vendor/urdf-loader/src/URDFLoader.js"}}
-    </script>
     <script type="module" src="./src/flow/banner.js"></script>
-    <script type="module" src="./src/flow/robots.js"></script>
   </body>
 </html>

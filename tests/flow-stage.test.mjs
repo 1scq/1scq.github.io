@@ -76,11 +76,11 @@ test("reduced motion renders finished artwork without starting an animation", ()
 
 test("sizes the canvas for both desktop and narrow high-density displays", () => {
   const s = setup();
-  assert.equal(s.env.canvas.width, 1800);
+  assert.equal(s.env.canvas.width, 1350);
   s.env.canvas.clientWidth = 320;
   s.visible(true);
   s.tick(100);
-  assert.equal(s.env.canvas.width, 640);
+  assert.equal(s.env.canvas.width, 480);
   assert.equal(s.frames.at(-1).w, 320);
 });
 

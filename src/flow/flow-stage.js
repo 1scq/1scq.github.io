@@ -69,6 +69,7 @@ export function noise3(x, y, z) {
 const FRAME_MS = [1000 / 60, 1000 / 60, 1000 / 30];
 
 export function stage(canvas, scene) {
+  scene = { maxDpr: 1.5, frameMs: 1000 / 30, ...scene };
   const ctx = canvas.getContext("2d", { alpha: true });
   if (!ctx) return { setColors() {}, destroy() {} };
   const col = { ink: "24, 24, 24", paper: "255, 255, 255", red: "179, 38, 60" };

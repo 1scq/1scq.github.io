@@ -8,7 +8,7 @@ const controller = (await readFile(new URL("../src/flow/banner.js", import.meta.
 const math = (await readFile(new URL("../src/flow/intro-progress.js", import.meta.url), "utf8"))
   .replaceAll("export ", "");
 
-function setup() {
+async function setup() {
   let top = 0;
   let frame;
   const events = new Map();
@@ -16,9 +16,10 @@ function setup() {
   const classes = new Set();
   const media = { matches: false, addEventListener() {} };
   const toggle = { addEventListener() {}, hidden: true };
-  const animation = { setColors() {}, setPaused(value) { this.paused = value; } };
+  const animation = { setScatter(value) { this.scatter = value; }, setColors() {}, setPaused(value) { this.paused = value; } };
   const intro = {
     offsetHeight: 800,
+    dataset: {},
     classList: { add: (key) => classes.add(key), toggle: (key, on) => on ? classes.add(key) : classes.delete(key) },
     style: { setProperty: (key, value) => properties.set(key, value) },
     getBoundingClientRect: () => ({ top }),
@@ -28,18 +29,19 @@ function setup() {
     document: { querySelector: (key) => key === "#intro" ? intro : { getContext: () => ({}) } },
     window: { addEventListener: (key, fn) => events.set(key, fn) },
     matchMedia: () => media,
-    mount: () => animation,
+    loadEffect: async () => ({id: "flow", mount: () => animation}),
     requestAnimationFrame: (fn) => { frame = fn; return 1; },
   });
-  vm.runInContext(`${math}\n${controller}`, env);
+  await vm.runInContext(`${math}\n${controller}\nready;`, env);
   const scroll = (distance) => { top = -distance; events.get("scroll")(); frame(); };
   return { intro, classes, properties, animation, media, scroll };
 }
 
-test("scrolling down releases the homepage and scrolling back restores the opening", () => {
-  const s = setup();
+test("scrolling down releases the homepage and scrolling back restores the opening", async () => {
+  const s = await setup();
   assert.equal(s.properties.get("--effect-opacity"), 1);
   s.scroll(400);
+  assert.equal(s.animation.scatter, 0.5);
   assert.equal(s.properties.get("--copy-opacity") < 1, true);
   assert.equal(s.animation.paused, false);
   s.scroll(800);
@@ -57,8 +59,8 @@ test("scrolling down releases the homepage and scrolling back restores the openi
   assert.equal(s.properties.get("--stage-opacity"), 1);
 });
 
-test("reduced motion keeps the opening static during ordinary page scrolling", () => {
-  const s = setup();
+test("reduced motion keeps the opening static during ordinary page scrolling", async () => {
+  const s = await setup();
   s.media.matches = true;
   s.scroll(800);
   assert.equal(s.properties.get("--effect-opacity"), 1);

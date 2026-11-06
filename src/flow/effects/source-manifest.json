@@ -1,0 +1,52 @@
+[
+  {
+    "id": "argus",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/argus.js",
+    "sha": "97b0047db5b1aca8bb8f0ef53e96feae6c4847df"
+  },
+  {
+    "id": "relay",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/relay.js",
+    "sha": "f5c6bea096ad588822f5caa6796c0aa51b76a32b"
+  },
+  {
+    "id": "ripple",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/ripple.js",
+    "sha": "14f7579bfb9cd646dd94531d588b2a4290c141e7"
+  },
+  {
+    "id": "scan",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/scan.js",
+    "sha": "99db1ca009823608914afac59f6428f1ffe90ec7"
+  },
+  {
+    "id": "cloth",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/cloth.js",
+    "sha": "9fb876a0e46d53c2f3c2c1608eee6eb88b7e8958"
+  },
+  {
+    "id": "landscape",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/landscape.js",
+    "sha": "940774fea75626c862a6e918829763dd2002d66e"
+  },
+  {
+    "id": "lidar",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/lidar.js",
+    "sha": "f43d40e435a73face655c19cec9bb95acc0b0ce9"
+  },
+  {
+    "id": "filings",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/filings.js",
+    "sha": "31f45479e39b337f155314cac889fb9fb44eb6d2"
+  },
+  {
+    "id": "growth",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/growth.js",
+    "sha": "1a7b5c2f57338e67db71bb483f275d4f3c197a93"
+  },
+  {
+    "id": "blackhole",
+    "upstream": "https://github.com/Axi404/todo/blob/main/web/lib/heroes/blackhole.js",
+    "sha": "28686c9088c0194fc72b95893b412ddce1ed1467"
+  }
+]

@@ -250,6 +250,25 @@ const renderHonors = (items) =>
     )
     .join("");
 
+const renderIntroContacts = () => {
+  const container = document.querySelector("#intro-contacts");
+  if (!container) return;
+  const { profile } = siteData;
+  const links = buildProfileSocialLinks(profile);
+  const contact = (item) => `<a class="intro-contact" href="${escapeHtml(item.href)}"${item.label === "Email" ? "" : ' target="_blank" rel="noreferrer"'}><i class="${iconClass(item)}" aria-hidden="true"></i><span>${escapeHtml(item.label)}</span></a>`;
+  container.innerHTML = `
+    <div class="intro-contact-row">
+      ${contact(links[0])}
+      ${contact(links[1])}
+    </div>
+    <div class="intro-contact-row">
+      ${contact(links[2])}
+      <a class="intro-contact" href="${escapeHtml(profile.wechatQrImage)}" data-wechat-trigger aria-haspopup="dialog" aria-controls="wechat-contact"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>WeChat</span></a>
+      ${contact(links[3])}
+    </div>
+  `;
+};
+
 const renderSidebar = () => {
   const sidebar = document.querySelector("#sidebar");
   const { profile } = siteData;
@@ -582,6 +601,7 @@ const bindActiveNav = () => {
 const init = () => {
   renderSidebar();
   renderContent();
+  renderIntroContacts();
   document.querySelector("#current-year").textContent = new Date().getFullYear();
   bindBibtexToggle();
   bindHonorsScroll();

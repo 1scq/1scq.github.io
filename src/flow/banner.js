@@ -1,14 +1,17 @@
-import { mount } from "./ripple.js";
+import { loadEffect } from "./effects.js";
 import { introProgress, introAppearance } from "./intro-progress.js";
 
 const intro = document.querySelector("#intro");
-const canvas = document.querySelector("#ripple-canvas");
+const canvas = document.querySelector("#flow-canvas");
 const toggle = intro?.querySelector(".flow-toggle");
 
-if (intro && canvas && toggle && canvas.getContext("2d")) {
+async function initialize() {
+  if (!(intro && canvas && toggle && canvas.getContext("2d"))) return;
+  const effect = await loadEffect();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   intro.classList.add("is-enhanced");
-  const animation = mount(canvas);
+  const animation = effect.mount(canvas);
+  intro.dataset.effect = effect.id;
   animation.setColors({ ink: "215 35% 18%", red: "345 83% 41%" });
   toggle.hidden = false;
   let paused = false;
@@ -21,6 +24,7 @@ if (intro && canvas && toggle && canvas.getContext("2d")) {
       intro.offsetHeight
     );
     const appearance = introAppearance(progress);
+    animation.setScatter?.(progress);
     animation.setPaused(paused || progress >= 1);
     intro.classList.toggle("is-exited", progress >= 1);
     intro.inert = progress >= 1;
@@ -53,3 +57,8 @@ if (intro && canvas && toggle && canvas.getContext("2d")) {
     document.querySelector("#content").focus({ preventScroll: true });
   });
 }
+
+const ready = initialize().catch((error) => {
+  console.error("Opening unavailable", error);
+  intro?.classList.remove("is-enhanced");
+});
