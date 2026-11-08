@@ -2,15 +2,26 @@ import { loadEffect } from "./effects.js";
 import { introProgress, introAppearance } from "./intro-progress.js";
 
 const intro = document.querySelector("#intro");
-const canvas = document.querySelector("#flow-canvas");
+let canvas = document.querySelector("#flow-canvas");
 const toggle = intro?.querySelector(".flow-toggle");
 
 async function initialize() {
-  if (!(intro && canvas && toggle && canvas.getContext("2d"))) return;
-  const effect = await loadEffect();
+  if (!(intro && canvas && toggle)) return;
+  let effect = await loadEffect();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  let animation;
+  try {
+    animation = await effect.mount(canvas);
+  } catch (error) {
+    console.warn("Opening renderer unavailable; using flow.", error);
+    // A canvas cannot change context type after WebGL initialization.
+    const replacement = canvas.cloneNode(false);
+    canvas.replaceWith(replacement);
+    canvas = replacement;
+    effect = { id: "flow", ...await import("./flow.js") };
+    animation = effect.mount(canvas);
+  }
   intro.classList.add("is-enhanced");
-  const animation = effect.mount(canvas);
   intro.dataset.effect = effect.id;
   function updateColors() {
     const dark = document.documentElement?.dataset.theme === "dark";

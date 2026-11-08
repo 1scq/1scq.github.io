@@ -12,8 +12,12 @@
     const theme = preference === "system" ? (system.matches ? "dark" : "light") : preference;
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
-    const select = document.querySelector("#theme-select");
-    if (select) select.value = preference;
+    document.documentElement.dataset.themePreference = preference;
+    document.querySelectorAll('#theme-segment [role="radio"]').forEach(item => {
+      const selected = item.dataset.value === preference;
+      item.setAttribute('aria-checked', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
     window.dispatchEvent(new CustomEvent("themechange", { detail: { theme, preference } }));
   }
 
@@ -26,14 +30,12 @@
     preference = valid(event.newValue) ? event.newValue : "system";
     apply();
   });
-  document.addEventListener("DOMContentLoaded", () => {
-    const select = document.querySelector("#theme-select");
-    if (!select) return;
-    select.value = preference;
-    select.addEventListener("change", () => {
-      preference = valid(select.value) ? select.value : "system";
-      try { localStorage.setItem(key, preference); } catch {}
-      apply();
-    });
+  window.addEventListener('themepreference', event => {
+    const next = event.detail?.preference;
+    if (!valid(next)) return;
+    preference = next;
+    try { localStorage.setItem(key, preference); } catch {}
+    apply();
   });
+  document.addEventListener('DOMContentLoaded', apply);
 })();

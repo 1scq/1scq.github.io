@@ -1,6 +1,7 @@
 export const EFFECT_IDS = [
   "argus", "relay", "flow", "ripple", "scan", "cloth",
   "landscape", "lidar", "filings", "growth", "blackhole",
+  "neural", "liquid-chrome", "hyperspeed", "grid-scan", "antigravity", "topography", "aero-shards", "splash-cursor",
 ];
 
 export function chooseEffect(previous, random = Math.random) {

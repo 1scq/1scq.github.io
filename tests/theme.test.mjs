@@ -5,14 +5,16 @@ import { readFile } from "node:fs/promises";
 
 const source = await readFile(new URL("../src/theme.js", import.meta.url), "utf8");
 function setup({ saved = null, dark = false, blocked = false } = {}) {
-  const events = {}, mediaEvents = {}, selectEvents = {};
+  const events = {}, mediaEvents = {};
   const root = { dataset: {}, style: {} };
-  const select = { value: "system", addEventListener: (type, fn) => selectEvents[type] = fn };
+  const buttons = ['system', 'light', 'dark'].map(value => ({
+    dataset: { value }, attrs: {}, setAttribute(name, value) { this.attrs[name] = value; }
+  }));
   const media = { matches: dark, addEventListener: (type, fn) => mediaEvents[type] = fn };
   const storage = new Map([["homepage-theme", saved]]);
   const env = {
     window: { matchMedia: () => media, addEventListener: (type, fn) => events[type] = fn, dispatchEvent() {} },
-    document: { documentElement: root, querySelector: () => select, addEventListener: (type, fn) => events[type] = fn },
+    document: { documentElement: root, querySelectorAll: () => buttons, addEventListener: (type, fn) => events[type] = fn },
     CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options.detail; } },
     localStorage: {
       getItem: (key) => { if (blocked) throw Error("blocked"); return storage.get(key); },
@@ -22,8 +24,8 @@ function setup({ saved = null, dark = false, blocked = false } = {}) {
   vm.runInNewContext(source, env);
   const initial = root.dataset.theme;
   events.DOMContentLoaded();
-  return { root, select, storage, initial,
-    choose(value) { select.value = value; selectEvents.change(); },
+  return { root, storage, initial, selected: () => buttons.find(item => item.attrs["aria-checked"] === "true")?.dataset.value,
+    choose(value) { events.themepreference({ detail: { preference: value } }); },
     system(value) { media.matches = value; mediaEvents.change(); },
     sync(value, key = "homepage-theme") { events.storage({ key, newValue: value }); },
   };
@@ -32,7 +34,7 @@ function setup({ saved = null, dark = false, blocked = false } = {}) {
 test("first paint follows the system and responds to appearance changes", () => {
   const s = setup({ dark: true });
   assert.equal(s.initial, "dark");
-  assert.equal(s.select.value, "system");
+  assert.equal(s.selected(), "system");
   s.system(false);
   assert.equal(s.root.dataset.theme, "light");
 });
@@ -60,10 +62,10 @@ test("invalid preferences and unavailable storage still allow switching", () => 
 test("other tabs synchronize preference changes and storage resets", () => {
   const s = setup({ saved: "dark" });
   s.sync("light", "unrelated");
-  assert.equal(s.select.value, "dark");
+  assert.equal(s.selected(), "dark");
   s.sync("light");
-  assert.equal(s.select.value, "light");
+  assert.equal(s.selected(), "light");
   assert.equal(s.root.dataset.theme, "light");
   s.sync(null, null);
-  assert.equal(s.select.value, "system");
+  assert.equal(s.selected(), "system");
 });
