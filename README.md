@@ -13,3 +13,6 @@ are saved locally; System follows appearance changes automatically. The opening
 animation, content, and dialogs share the selected theme.
 
 See [theme control notes](docs/theme-control.md) for interaction details.
+
+The ChengqiShi heading supports elastic letter dragging, touch interaction,
+and keyboard plucking. See [elastic lettering notes](docs/elastic-lettering.md).

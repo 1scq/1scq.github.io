@@ -495,6 +495,39 @@ a:hover {
   letter-spacing: -0.045em;
 }
 
+/* Each letter keeps its original typeset position; only the visual layer moves. */
+.elastic-lettering {
+  position: relative;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: grab;
+  --elastic-tension: #9854c5;
+}
+:root[data-theme="dark"] .elastic-lettering { --elastic-tension: #c8a5ed; }
+.elastic-lettering.is-elastic-held { cursor: grabbing; }
+.elastic-lettering__sizer { visibility: hidden; pointer-events: none; }
+.elastic-lettering__letters { position: absolute; inset: 0; pointer-events: none; }
+.elastic-lettering__letter {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  white-space: pre;
+  letter-spacing: 0;
+  transform-origin: 50% 55%;
+  color: color-mix(in oklab, var(--intro-ink), var(--elastic-tension) var(--elastic-strain, 0%));
+}
+.is-elastic-active .elastic-lettering__letter { will-change: transform; }
+.elastic-lettering:focus-visible { outline: 1px dashed var(--elastic-tension); outline-offset: 10px; border-radius: 3px; }
+.elastic-lettering:focus-visible .elastic-lettering__letter[data-key-selected] {
+  text-decoration: underline;
+  text-decoration-color: var(--elastic-tension);
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 1px;
+}
+
 .intro-chinese {
   margin: 14px 0 0;
   font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
