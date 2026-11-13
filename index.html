@@ -24,6 +24,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./styles.css?v=20261110" />
+    <link rel="stylesheet" href="./src/lanyard.css?v=20261113" />
   </head>
   <body>
     <div class="theme-control rubber-segment" id="theme-segment" role="radiogroup" aria-label="Color theme / 外观模式" data-draggable>
@@ -48,6 +49,11 @@
           </div>
           <nav class="intro-contacts" id="intro-contacts" aria-label="Contact and profiles"></nav>
         </div>
+        <div class="homepage-badge">
+          <div class="lanyard" id="homepage-badge" role="button" tabindex="0" aria-label="Chengqi Shi 的工牌，可拖动，点击或按回车翻面">
+            <div class="badge-fallback"><img src="./assets/badge-portrait.png" alt="Chengqi Shi 的黑白素描头像" /><span>@lnscq</span></div>
+          </div>
+        </div>
         <a class="intro-enter" href="#content" aria-label="Enter homepage">
           <span class="intro-arrow" aria-hidden="true">↓</span>
         </a>
@@ -63,6 +69,7 @@
 
     <script src="./data.js"></script>
     <script src="./script.js"></script>
+    <script type="module" src="./src/homepage-badge.js?v=20261113"></script>
     <script type="module" src="./src/theme-control.js?v=20261109"></script>
     <script type="module" src="./src/intro-lettering.js?v=20261110"></script>
     <script type="module" src="./src/flow/banner.js?v=20261109"></script>

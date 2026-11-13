@@ -16,3 +16,12 @@ See [theme control notes](docs/theme-control.md) for interaction details.
 
 The ChengqiShi heading supports elastic letter dragging, touch interaction,
 and keyboard plucking. See [elastic lettering notes](docs/elastic-lettering.md).
+
+The opening includes a draggable, flippable 3D portrait badge. Its renderer is
+adapted from the user-supplied Lanyard component and uses the existing local
+Three.js dependency. `src/badge-artwork.js` composes the illustrated portrait and
+contact reverse; `src/danny-lettering.js` draws the original animated Danny
+wordmark. Enter or Space flips the focused badge. Reduced motion disables idle
+sway and handwriting animation; an HTML portrait remains if WebGL is unavailable.
+The full-screen canvas allows dragging across the centered introduction without
+clipping or intercepting input outside the card.
