@@ -38,6 +38,10 @@ const siteData = {
   },
   news: [
     {
+      date: "2026/11",
+      text: "Our team reached the finals of Robbyant's LingBot Embodied AI Challenge and won the <strong>Merit Award (14/1855)</strong> in the on-site hackathon! <a href=\"https://mp.weixin.qq.com/s/3J1SwdE0M-ByRtEfc3rlZg\" target=\"_blank\" rel=\"noreferrer\">Coverage by 新智元 (AI Era)</a>.",
+    },
+    {
       date: "2026/09",
       text: "Our <a href=\"https://arxiv.org/abs/2609.17210\" target=\"_blank\" rel=\"noreferrer\">FluxVLA Engine</a> technical report is out!",
     },
@@ -244,6 +248,14 @@ const siteData = {
     },
   ],
   honors: [
+    {
+      date: "2026/11",
+      competition: "Robbyant LingBot Embodied AI Challenge",
+      award: "Merit Award (14/1855)",
+      image: "./assets/certificates/lingbot-2026-inside.png",
+      certificateCover: "./assets/certificates/lingbot-2026-cover.jpeg",
+      role: "Finalist",
+    },
     {
       date: "2026/10",
       competition: "RoboCup National Competition",

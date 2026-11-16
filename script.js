@@ -230,7 +230,7 @@ const renderHonors = (items) =>
       (item) => `
         <li class="honor-item">
           ${item.image ? `
-            <button class="honor-image-wrapper" type="button" aria-haspopup="dialog" aria-label="${escapeHtml(`View certificate: ${item.competition} — ${item.award}`)}">
+            <button class="honor-image-wrapper" type="button" ${item.certificateCover ? `data-certificate-cover="${escapeHtml(item.certificateCover)}"` : ""} aria-haspopup="dialog" aria-label="${escapeHtml(`View certificate: ${item.competition} — ${item.award}`)}">
               <img src="${escapeHtml(item.image)}" alt="${escapeHtml(`${item.competition} — ${item.award} certificate`)}" loading="lazy" decoding="async" />
               <span class="honor-image-hint" aria-hidden="true">View certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </button>
@@ -470,6 +470,7 @@ const bindImageLightbox = () => {
   };
 
   document.querySelectorAll(".pub-image-wrapper, .honor-image-wrapper").forEach((button) => {
+    if (button.dataset.certificateCover) return;
     button.addEventListener("click", async () => {
       if (dialog.open) return;
       const thumbnail = button.querySelector("img");
@@ -544,7 +545,7 @@ const bindHonorsScroll = () => {
   let lastTime = 0;
   let position = viewport.scrollLeft;
   let frame;
-  const canRun = () => !paused && !hovered && !focused && !touching && visible && !document.hidden && !document.querySelector(".image-lightbox").open;
+  const canRun = () => !paused && !hovered && !focused && !touching && visible && !document.hidden && !document.querySelector(".image-lightbox").open && !document.querySelector(".certificate-dialog[open]");
   const tick = (time) => {
     if (canRun()) {
       const distance = list.children[originals.length].offsetLeft - originals[0].offsetLeft;
