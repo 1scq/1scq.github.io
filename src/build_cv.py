@@ -6,9 +6,11 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.utils import ImageReader
 from reportlab.platypus import Paragraph
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from PIL import Image, ImageOps
 import json
 import os
 
@@ -74,11 +76,14 @@ def section(title, entries, top):
 
 # Circular portrait and compact contact header, following the supplied reference.
 photo_x, photo_y, diameter = LEFT, H - 119, 88
+with Image.open(ROOT / "assets/badge-portrait.png") as portrait:
+    photo = ImageOps.fit(portrait.convert("RGB"), (640, 640),
+                         method=Image.Resampling.LANCZOS, centering=(0.5, 0.15))
 c.saveState()
 p = c.beginPath()
 p.circle(photo_x + diameter / 2, photo_y + diameter / 2, diameter / 2)
 c.clipPath(p, stroke=0, fill=0)
-c.drawImage(str(ROOT / "asserts/avatar.jpg"), photo_x, photo_y,
+c.drawImage(ImageReader(photo), photo_x, photo_y,
             width=diameter, height=diameter, mask="auto")
 c.restoreState()
 c.setStrokeColor(HexColor(BLUE))
