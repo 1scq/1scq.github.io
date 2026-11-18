@@ -6,6 +6,9 @@ Local preview: `python3 -m http.server 8000 --bind 127.0.0.1`, then open
 Run the automated animation checks with `node --test tests/*.test.*`.
 See [opening animation notes](docs/opening-animation.md) for behavior and attribution.
 
+Rebuild the CV with `python3 src/build_cv.py` (requires ReportLab and Pillow).
+See [CV editing notes](docs/cv/README.md) for content, fonts, and publishing steps.
+
 The homepage uses a RubberSegment-style elastic control for System (default),
 Light, and Dark. It supports clicks, thumb dragging, arrow keys, Home/End and
 reduced motion. Manual choices

@@ -96,6 +96,45 @@ const siteData = {
   ],
   publications: [
     {
+      title: "EgoLoAF: Learning Humanoid Loco-Manipulation from Egocentric Demonstrations with Hand–Object Affordances",
+      pageUrl: "https://yuhengna.github.io/EgoLoAF/",
+      image: "./assets/egoloaf-pipeline.webp",
+      imageAlt: "EgoLoAF pipeline: egocentric-to-humanoid motion conversion, hand–object affordance construction, robot-view rendering, and VLA post-training",
+      venue: "Under Review, 2026.11",
+      authors: [
+        { name: "Yiming Zeng*" },
+        { name: "Jiangyuxuan Dai*" },
+        { name: "Yuheng Na*" },
+        { name: "TAN ZHU XUAN" },
+        { name: "Zihan Lin" },
+        { name: "Xinfang Qi" },
+        { name: "Shijian Zhang" },
+        { name: "Chengqi Shi", highlight: true },
+        { name: "Yihan Kuang" },
+        { name: "Zhide Zhong" },
+        { name: "Junjie He" },
+        { name: "Junfeng Li" },
+        { name: "Zimu Han" },
+        { name: "Naipeng Li", corresponding: true },
+        { name: "Haoang Li", corresponding: true },
+      ],
+      summary:
+        "Converts egocentric human demonstrations into humanoid training data and uses explicit hand–object affordances for VLA post-training, without wearable motion trackers or task-specific robot teleoperation demonstrations. Achieves near-teleoperation performance with 4.03× higher data-collection efficiency across four real-world tasks.",
+      paperUrl: "https://yuhengna.github.io/EgoLoAF/assets/EgoLoAF.pdf",
+      projectUrl: "https://yuhengna.github.io/EgoLoAF/",
+      bibtex: `@misc{zeng2026egoloaf,
+  title   = {EgoLoAF: Learning Humanoid Loco-Manipulation from
+             Egocentric Demonstrations with Hand--Object Affordances},
+  author  = {Yiming Zeng and Jiangyuxuan Dai and Yuheng Na and
+             {TAN ZHU XUAN} and Zihan Lin and Xinfang Qi and
+             Shijian Zhang and Chengqi Shi and Yihan Kuang and
+             Zhide Zhong and Junjie He and Junfeng Li and
+             Zimu Han and Naipeng Li and Haoang Li},
+  year    = {2026},
+  url     = {https://yuhengna.github.io/EgoLoAF/}
+}`,
+    },
+    {
       title: "SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
       pageUrl: "https://arxiv.org/abs/2610.30044",
       image: "./assets/sp-hlm-cover.jpg",

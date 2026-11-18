@@ -1,0 +1,150 @@
+{
+  "sections": [
+    {
+      "title": "Profile",
+      "entries": [
+        {
+          "title": "Computer Science undergraduate in XJTU's Young Gifted Class, researching embodied intelligence and humanoid robotics, with interests in VLA models, world models, and reinforcement learning."
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "entries": [
+        {
+          "title": "<b>Xi'an Jiaotong University</b>",
+          "date": "Sept. 2025 - Present",
+          "lines": [
+            "<i>B.S. in Computer Science and Technology</i>"
+          ]
+        },
+        {
+          "title": "<b>Xi'an Jiaotong University</b>",
+          "date": "Sept. 2023 - July 2025",
+          "lines": [
+            "<i>Young Gifted Class (Preparatory Phase)</i>"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Publications",
+      "entries": [
+        {
+          "title": "<b>EgoLoAF: Learning Humanoid Loco-Manipulation from Egocentric Demonstrations with Hand-Object Affordances</b>",
+          "lines": [
+            "Yiming Zeng*, Jiangyuxuan Dai*, Yuheng Na*, TAN ZHU XUAN, Zihan Lin, Xinfang Qi, Shijian Zhang, <b>Chengqi Shi</b>, Yihan Kuang, Zhide Zhong, Junjie He, Junfeng Li, Zimu Han, Naipeng Li, Haoang Li.",
+            "<i>Under Review</i>, Nov. 2026. * Equal contribution. <a href=\"https://yuhengna.github.io/EgoLoAF/assets/EgoLoAF.pdf\" color=\"#365f73\">Paper</a> | <a href=\"https://yuhengna.github.io/EgoLoAF/\" color=\"#365f73\">Project</a>",
+            "Egocentric-to-humanoid data conversion and hand-object affordance-guided VLA post-training."
+          ]
+        },
+        {
+          "title": "<b>SP-HLM: Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation</b>",
+          "lines": [
+            "Zhaohui Yang*, Quanbao Lin*, <b>Chengqi Shi*</b>, Zhenglang Weng, Jicheng Lin, Boyu Chen, Tengjie Zhu, Guanzhu Ren, Jiahao Xu, Yang Feng, Xiaokang Yang, Yao Mu.",
+            "<i>arXiv:2610.30044, Under Review</i>, Oct. 2026. * Equal contribution. <a href=\"https://arxiv.org/abs/2610.30044\" color=\"#365f73\">Paper</a> | <a href=\"https://sp-hlm.github.io/\" color=\"#365f73\">Project</a>",
+            "Sparse body poses and a learned motion prior connect VLA prediction, real-time motion generation, and whole-body humanoid control."
+          ]
+        },
+        {
+          "title": "<b>FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence</b>",
+          "lines": [
+            "Yinhao Li, Weixin Mao, Zihan Lan, et al., <b>Chengqi Shi</b>, Hua Chen.",
+            "<i>arXiv:2609.17210</i>, Sept. 2026. <a href=\"https://arxiv.org/abs/2609.17210\" color=\"#365f73\">Paper</a> | <a href=\"https://github.com/FluxVLA/FluxVLA\" color=\"#365f73\">Code</a>",
+            "An open platform unifying embodied-policy training, simulation evaluation, human-in-the-loop correction, and real-robot deployment."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Research &amp; Experience",
+      "entries": [
+        {
+          "title": "<b>LimX Dynamics</b>",
+          "date": "Aug. 2026 - Present",
+          "lines": [
+            "<i>Embodied Intelligence Algorithm Intern</i>"
+          ]
+        },
+        {
+          "title": "<b>Shanghai Jiao Tong University, ScaleLab</b>",
+          "date": "Feb. 2026 - Present",
+          "lines": [
+            "<i>Research Intern | Advisor: Prof. Yao Mu</i>",
+            "Research on humanoid whole-body mobile manipulation and world models."
+          ]
+        },
+        {
+          "title": "<b>XJTU, Institute of Artificial Intelligence and Robotics</b>",
+          "date": "Apr. 2025 - Mar. 2026",
+          "lines": [
+            "<i>Research Intern</i> | Reinforcement learning and image generation models."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Honors &amp; Awards",
+      "entries": [
+        {
+          "title": "<b>Merit Award (14/1855)</b>, Robbyant LingBot Embodied AI Challenge",
+          "date": "Nov. 2026",
+          "lines": [
+            "Finalist, on-site hackathon."
+          ],
+          "gap": 4
+        },
+        {
+          "title": "<b>Third-Class Scholarship</b>, Xi'an Jiaotong University",
+          "date": "Oct. 2026",
+          "gap": 4
+        },
+        {
+          "title": "<b>Outstanding Student</b>, Xi'an Jiaotong University",
+          "date": "Oct. 2026",
+          "gap": 4
+        },
+        {
+          "title": "<b>National Second Prize</b>, RoboCup National Competition",
+          "date": "Oct. 2026",
+          "gap": 4
+        },
+        {
+          "title": "<b>National First Prize</b>, RoboCup Special Competition",
+          "date": "Aug. 2026",
+          "lines": [
+            "Team Captain, 3D Object Recognition."
+          ],
+          "gap": 4
+        },
+        {
+          "title": "<b>Honorable Mention</b>, Mathematical Contest in Modeling",
+          "date": "May 2026",
+          "gap": 4
+        },
+        {
+          "title": "<b>National First Prize</b>, China Undergraduate Physics Experiment Competition",
+          "date": "Nov. 2025",
+          "gap": 4
+        },
+        {
+          "title": "<b>Provincial Third Prize</b>, Lanqiao Cup",
+          "date": "May 2025",
+          "gap": 4
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "entries": [
+        {
+          "title": "<b>Programming:</b> Python, C/C++, JavaScript/HTML/CSS, Bash, MATLAB",
+          "lines": [
+            "<b>Tools:</b> PyTorch, ROS2, OpenCV, YOLO, Git, LaTeX; Ubuntu/Linux, Orange Pi",
+            "<b>Languages:</b> Chinese (native), English (CET-6)"
+          ]
+        }
+      ]
+    }
+  ]
+}
