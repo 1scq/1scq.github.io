@@ -103,7 +103,7 @@ c.setLineWidth(0.6)
 c.line(LEFT, y, RIGHT, y)
 y -= 16
 for item in DATA["sections"]:
-    y = section(item["title"], item["entries"], y) - 5
+    y = section(item["title"], item["entries"], y) - 4
 if y < 26:
     raise ValueError(f"CV content overflows the page: bottom={y:.1f}")
 c.save()

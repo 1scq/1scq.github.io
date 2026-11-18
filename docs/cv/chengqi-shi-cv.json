@@ -140,7 +140,8 @@
         {
           "title": "<b>Programming:</b> Python, C/C++, JavaScript/HTML/CSS, Bash, MATLAB",
           "lines": [
-            "<b>Tools:</b> PyTorch, ROS2, OpenCV, YOLO, Git, LaTeX; Ubuntu/Linux, Orange Pi",
+            "<b>Tools:</b> PyTorch, ROS2, OpenCV, Git, LaTeX; Ubuntu/Linux",
+            "<b>Robot Platforms:</b> AgileX Cobot Magic, Unitree G1 Humanoid",
             "<b>Languages:</b> Chinese (native), English (CET-6)"
           ]
         }
