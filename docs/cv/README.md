@@ -14,8 +14,8 @@ blue-gray palette, circular portrait, and narrow section-label column.
 - The script uses Times New Roman from macOS's Supplemental fonts folder.
   On other systems, set `CV_FONT_DIR` to a folder containing the four Times New
   Roman TTF files named in the script.
-- The portrait uses `assets/cv-portrait.jpg`, a head-and-shoulders crop of the
-  author's supplied original color photograph, fitted to the circular frame.
+- The portrait uses the card's original image at `assets/badge-portrait.png`,
+  cropped proportionally to fit the circular frame.
 
 ## Content sources
 

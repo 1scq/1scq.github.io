@@ -76,9 +76,9 @@ def section(title, entries, top):
 
 # Circular portrait and compact contact header, following the supplied reference.
 photo_x, photo_y, diameter = LEFT, H - 119, 88
-with Image.open(ROOT / "assets/cv-portrait.jpg") as portrait:
+with Image.open(ROOT / "assets/badge-portrait.png") as portrait:
     photo = ImageOps.fit(portrait.convert("RGB"), (640, 640),
-                         method=Image.Resampling.LANCZOS)
+                         method=Image.Resampling.LANCZOS, centering=(0.5, 0.15))
 c.saveState()
 p = c.beginPath()
 p.circle(photo_x + diameter / 2, photo_y + diameter / 2, diameter / 2)
