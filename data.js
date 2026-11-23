@@ -97,9 +97,10 @@ const siteData = {
   publications: [
     {
       title: "EgoLoAF: Learning Humanoid Loco-Manipulation from Egocentric Demonstrations with Hand–Object Affordances",
-      pageUrl: "https://yuhengna.github.io/EgoLoAF/",
-      image: "./assets/egoloaf-pipeline.webp",
-      imageAlt: "EgoLoAF pipeline: egocentric-to-humanoid motion conversion, hand–object affordance construction, robot-view rendering, and VLA post-training",
+      pageUrl: "https://egoloaf.github.io/",
+      image: "./assets/egoloaf-project-film.jpg",
+      hoverImage: "./assets/egoloaf-project-film.gif",
+      imageAlt: "EgoLoAF project film opening slide with the paper title, authors, and participating institutions",
       venue: "Under Review, 2026.11",
       authors: [
         { name: "Yiming Zeng*" },
@@ -120,8 +121,8 @@ const siteData = {
       ],
       summary:
         "Converts egocentric human demonstrations into humanoid training data and uses explicit hand–object affordances for VLA post-training, without wearable motion trackers or task-specific robot teleoperation demonstrations. Achieves near-teleoperation performance with 4.03× higher data-collection efficiency across four real-world tasks.",
-      paperUrl: "https://yuhengna.github.io/EgoLoAF/assets/EgoLoAF.pdf",
-      projectUrl: "https://yuhengna.github.io/EgoLoAF/",
+      paperUrl: "https://egoloaf.github.io/assets/EgoLoAF.pdf",
+      projectUrl: "https://egoloaf.github.io/",
       bibtex: `@misc{zeng2026egoloaf,
   title   = {EgoLoAF: Learning Humanoid Loco-Manipulation from
              Egocentric Demonstrations with Hand--Object Affordances},
@@ -131,7 +132,7 @@ const siteData = {
              Zhide Zhong and Junjie He and Junfeng Li and
              Zimu Han and Naipeng Li and Haoang Li},
   year    = {2026},
-  url     = {https://yuhengna.github.io/EgoLoAF/}
+  url     = {https://egoloaf.github.io/}
 }`,
     },
     {
@@ -139,9 +140,7 @@ const siteData = {
       pageUrl: "https://arxiv.org/abs/2610.30044",
       image: "./assets/sp-hlm-cover.jpg",
       hoverImage: "./assets/sp-hlm-cover.gif",
-      coverLabel: "SP-HLM",
-      coverTitle: "Sparse-Pose-Driven Motion Generation and Whole-Body Control for Humanoid Loco-Manipulation",
-      imageAlt: "SP-HLM demo: simulated manipulation tasks and real humanoid robot experiments",
+      imageAlt: "SP-HLM project video title over a montage of simulated and real humanoid robot demonstrations",
       venue: "arXiv preprint, Under Review, 2026.10",
       authors: [
         { name: "Zhaohui Yang*" },
