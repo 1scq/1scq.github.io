@@ -109,6 +109,9 @@ const buildPublicationLinks = (item) =>
     item.projectUrl
       ? { label: "Project", icon: "fa-globe", href: item.projectUrl }
       : null,
+    item.videoUrl
+      ? { label: "Video", icon: "fa-circle-play", href: item.videoUrl }
+      : null,
     item.codeUrl
       ? { label: "Code", icon: "fa-github", href: item.codeUrl, brand: true }
       : null,

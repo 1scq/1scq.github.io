@@ -123,6 +123,7 @@ const siteData = {
         "Converts egocentric human demonstrations into humanoid training data and uses explicit hand–object affordances for VLA post-training, without wearable motion trackers or task-specific robot teleoperation demonstrations. Achieves near-teleoperation performance with 4.03× higher data-collection efficiency across four real-world tasks.",
       paperUrl: "https://arxiv.org/abs/2611.32260",
       projectUrl: "https://egoloaf.github.io/",
+      videoUrl: "https://egoloaf.github.io/#film",
       bibtex: `@misc{zeng2026egoloaf,
   title   = {EgoLoAF: Learning Humanoid Loco-Manipulation from
              Egocentric Demonstrations with Hand--Object Affordances},
