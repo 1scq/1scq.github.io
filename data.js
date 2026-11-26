@@ -97,7 +97,7 @@ const siteData = {
   publications: [
     {
       title: "EgoLoAF: Learning Humanoid Loco-Manipulation from Egocentric Demonstrations with Hand–Object Affordances",
-      pageUrl: "https://egoloaf.github.io/",
+      pageUrl: "https://arxiv.org/abs/2611.32260",
       image: "./assets/egoloaf-project-film.jpg",
       hoverImage: "./assets/egoloaf-project-film.gif",
       imageAlt: "EgoLoAF project film opening slide with the paper title, authors, and participating institutions",
@@ -121,7 +121,7 @@ const siteData = {
       ],
       summary:
         "Converts egocentric human demonstrations into humanoid training data and uses explicit hand–object affordances for VLA post-training, without wearable motion trackers or task-specific robot teleoperation demonstrations. Achieves near-teleoperation performance with 4.03× higher data-collection efficiency across four real-world tasks.",
-      paperUrl: "https://egoloaf.github.io/assets/EgoLoAF.pdf",
+      paperUrl: "https://arxiv.org/abs/2611.32260",
       projectUrl: "https://egoloaf.github.io/",
       bibtex: `@misc{zeng2026egoloaf,
   title   = {EgoLoAF: Learning Humanoid Loco-Manipulation from
@@ -132,7 +132,7 @@ const siteData = {
              Zhide Zhong and Junjie He and Junfeng Li and
              Zimu Han and Naipeng Li and Haoang Li},
   year    = {2026},
-  url     = {https://egoloaf.github.io/}
+  url     = {https://arxiv.org/abs/2611.32260}
 }`,
     },
     {
