@@ -64,6 +64,7 @@ const siteData = {
       role: "Embodied Intelligence Algorithm Intern",
       period: "August 2026 - Present",
       logo: "./asserts/limx-dynamics.png",
+      darkLogo: "./assets/limx-dynamics-dark.png",
       logoAlt: "LimX Dynamics logo",
       url: "https://www.limxdynamics.com/",
     },

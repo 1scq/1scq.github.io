@@ -831,6 +831,17 @@ a:hover {
   user-select: none;
 }
 
+.experience-logo--dark,
+:root[data-theme="dark"] .experience-logo--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .experience-logo--dark {
+  display: block;
+  right: clamp(8px, 2vw, 24px);
+  opacity: 0.12;
+}
+
 .publication {
   display: block;
   padding: 0 0 48px;
@@ -1509,10 +1520,23 @@ a:hover {
     opacity: 0.07;
   }
 
+  :root[data-theme="dark"] .experience-logo--dark {
+    top: auto;
+    bottom: 4px;
+    width: 36%;
+    transform: none;
+  }
+
   .content {
     padding: 40px 18px;
   }
 
+}
+
+@media (max-width: 360px) {
+  :root[data-theme="dark"] .experience-logo--dark {
+    width: 26%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
