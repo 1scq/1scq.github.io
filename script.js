@@ -70,18 +70,6 @@ const renderNews = (items) =>
     )
     .join("");
 
-const renderExperienceLogos = ({ logo, darkLogo, logoAlt, institution }) => {
-  if (!logo) return "";
-
-  const alt = escapeHtml(logoAlt || institution);
-  const lightClass = darkLogo ? " experience-logo--light" : "";
-  return `<img class="experience-logo${lightClass}" src="${escapeHtml(logo)}" alt="${alt}" />${
-    darkLogo
-      ? `<img class="experience-logo experience-logo--dark" src="${escapeHtml(darkLogo)}" alt="${alt}" />`
-      : ""
-  }`;
-};
-
 const renderExperience = (items) =>
   items
     .map(
@@ -93,7 +81,12 @@ const renderExperience = (items) =>
           rel="noreferrer"
           aria-label="${escapeHtml(`${item.institution}, ${item.role}`)}"
         >
-          ${renderExperienceLogos(item)}
+          ${
+            item.logo
+              ? `<img class="experience-logo${item.logoMonochrome ? " experience-logo--monochrome" : ""}"
+                  src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt || item.institution)}" />`
+              : ""
+          }
           <div class="experience-copy">
             <h3>
               <span>${escapeHtml(item.institution)}</span>
